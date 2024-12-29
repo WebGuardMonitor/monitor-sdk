@@ -1,0 +1,27 @@
+{
+    "name": "monitor-sdk",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "type": "module",
+    "scripts": {
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "format": "prettier . --write",
+        "preview": "vite preview"
+    },
+    "keywords": [
+        "错误链",
+        "性能监控",
+        "监控",
+        "monitor"
+    ],
+    "author": "lonewolfyx",
+    "license": "MIT",
+    "description": "前端错误链路追踪以及性能监控",
+    "devDependencies": {
+        "prettier": "3.4.2",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2",
+        "vite": "^6.0.6"
+    }
+}
