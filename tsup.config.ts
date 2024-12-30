@@ -4,7 +4,10 @@ export default defineConfig({
     entry: ['src/index.ts'],
     format: ['iife', 'cjs', 'esm'],
     dts: true,
-    minify: true,
-    sourcemap: true,
-    target: ['deno']
+    // minify: true,
+    // sourcemap: true,
+    clean: true,
+    target: ['esnext', 'node16'],
+    globalName: 'TraceSdk',
+    platform: 'browser'
 })

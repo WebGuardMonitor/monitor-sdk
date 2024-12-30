@@ -5,7 +5,30 @@
         "module": "ESNext",
         "declaration": true,
         "sourceMap": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+
+
+        "alwaysStrict": false,
+//        "declaration": true,
+        "declarationMap": true,
+        "downlevelIteration": true,
+        "importHelpers": true,
+        "inlineSources": true,
+        "isolatedModules": true,
+//        "lib": [
+//            "ES2018",
+//        ],
+        "noErrorTruncation": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "preserveWatchOutput": true,
+//        "sourceMap": true,
+//        "strict": true,
+        "strictBindCallApply": false,
+//        "target": "es2018",
+        "noUncheckedIndexedAccess": true
     },
     "include": [
         "src/**/*"
