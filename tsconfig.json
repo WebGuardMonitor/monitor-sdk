@@ -6,31 +6,28 @@
         "declaration": true,
         "sourceMap": true,
         "moduleResolution": "node",
-
-
         "alwaysStrict": false,
-//        "declaration": true,
+        //        "declaration": true,
         "declarationMap": true,
         "downlevelIteration": true,
         "importHelpers": true,
         "inlineSources": true,
         "isolatedModules": true,
-//        "lib": [
-//            "ES2018",
-//        ],
+        //        "lib": [
+        //            "ES2018",
+        //        ],
         "noErrorTruncation": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "preserveWatchOutput": true,
-//        "sourceMap": true,
-//        "strict": true,
+        //        "sourceMap": true,
+        //        "strict": true,
         "strictBindCallApply": false,
-//        "target": "es2018",
-        "noUncheckedIndexedAccess": true
+        //        "target": "es2018",
+        "noUncheckedIndexedAccess": true,
+        "esModuleInterop": true
     },
-    "include": [
-        "src/**/*"
-    ]
+    "include": ["src/**/*"]
 }

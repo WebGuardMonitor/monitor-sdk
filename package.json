@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@fingerprintjs/fingerprintjs": "^4.5.1",
+        "dayjs": "^1.11.13",
         "md5-typescript": "^1.0.5",
         "ua-parser-js": "^2.0.0"
     }

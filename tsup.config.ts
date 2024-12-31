@@ -1,4 +1,4 @@
-import {defineConfig} from "tsup";
+import {defineConfig} from 'tsup';
 
 export default defineConfig({
     entry: ['src/index.ts'],
@@ -8,6 +8,9 @@ export default defineConfig({
     // sourcemap: true,
     clean: true,
     target: ['esnext', 'node16'],
-    globalName: 'TraceSdk',
-    platform: 'browser'
-})
+    // globalName: 'TraceSdk',
+    platform: 'browser',
+    // footer: {
+    //     js: 'globalThis.TraceSDK = require("./index").TraceSDK;',
+    // },
+});
