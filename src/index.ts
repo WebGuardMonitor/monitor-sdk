@@ -2,7 +2,7 @@ import {Options} from './types';
 import Config from './config/config';
 import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
-import {PageViewMonitor, UniqueVisitorMonitor} from "./monitor";
+import {PageViewMonitor, PerformanceMonitor, UniqueVisitorMonitor, WebVitalsMonitor} from "./monitor";
 
 class TraceSDK {
     public readonly version: string = '1.0.1';
@@ -36,8 +36,16 @@ class TraceSDK {
     private registerEvent(): EventComposite {
         const event = new EventComposite();
 
+        // PV 上报
         event.register(new PageViewMonitor());
+        // UV 上报
         event.register(new UniqueVisitorMonitor());
+
+        // performance 时长总线上报
+        event.register(new PerformanceMonitor())
+
+        // 网站性能数据指标上报
+        event.register(new WebVitalsMonitor())
 
         return event;
     }

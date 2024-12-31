@@ -5,6 +5,8 @@ export interface Options {
     appId: string;
     // 当前用户 ID
     userId?: string;
+    // 会话 ID
+    sessionId?: string;
 }
 
 export interface DefaultOption {

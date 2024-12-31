@@ -1,17 +1,5 @@
+import {PERFORMANCE_TIMING_EV_TYPE} from "../common";
+
 export type EventType =
-    | 'pv'
-    | 'performance'
-    | 'js_error'
-    | 'promise_error'
-    | 'resource_error'
-    | 'xhr_error'
-    | 'fetch_error'
-    | 'history_error'
-    | 'console_error'
-    | 'unhandledrejection_error'
-    | 'error_event'
-    | 'unhandledrejection_event'
-    | 'rejectionhandled_event'
-    | 'fetch_event'
-    | 'xhr_event'
-    | 'history_event';
+    | 'pv' | 'uv'
+    | typeof PERFORMANCE_TIMING_EV_TYPE

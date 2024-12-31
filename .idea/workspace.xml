@@ -6,27 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="875f02e6-1b1f-4922-aa39-1a68b85e12c0" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/constant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigManager.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/page-view.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/behavior/page-view.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/EventType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/EventType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Monitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Monitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/global.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/method.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/option.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/device.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/device.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/generatePassword.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/generatePassword.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/is.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/is.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/sendData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/bytesToUuid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/bytesToUuid.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/rng-browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/rng-browser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsup.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tsup.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +68,7 @@
       <recent name="$PROJECT_DIR$/src/monitor/behavior" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.preview">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -122,9 +111,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.preview" />
         <item itemvalue="npm.format" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -148,7 +137,7 @@
       <workItem from="1735531199707" duration="24156000" />
       <workItem from="1735624380645" duration="19000" />
       <workItem from="1735624478341" duration="9543000" />
-      <workItem from="1735634594753" duration="2272000" />
+      <workItem from="1735634594753" duration="17114000" />
     </task>
     <servers />
   </component>
