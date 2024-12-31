@@ -6,23 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="875f02e6-1b1f-4922-aa39-1a68b85e12c0" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/constant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ConfigManager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/ConfigManager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/EventType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/EventType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/Monitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Monitor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/global.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/method.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/option.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/device.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/device.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/generatePassword.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/generatePassword.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/md5.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/md5.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/pageId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/pageId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/is.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/is.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/sendData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sessionId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sessionId.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/userId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/userId.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/uuid/bytesToUuid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/bytesToUuid.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/uuid/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/uuid/rng-browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/uuid/rng-browser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsup.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tsup.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +74,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/monitor/behavior" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.preview">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -114,8 +123,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.preview" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.format" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -138,7 +147,8 @@
       <workItem from="1735458210315" duration="9136000" />
       <workItem from="1735531199707" duration="24156000" />
       <workItem from="1735624380645" duration="19000" />
-      <workItem from="1735624478341" duration="8347000" />
+      <workItem from="1735624478341" duration="9543000" />
+      <workItem from="1735634594753" duration="2272000" />
     </task>
     <servers />
   </component>

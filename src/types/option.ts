@@ -1,5 +1,3 @@
-import {MethodType} from "./method";
-
 export interface Options {
     // 上报地址
     report: string;
@@ -10,14 +8,14 @@ export interface Options {
 }
 
 export interface DefaultOption {
-    REPORT_PV: string
+    REPORT_PV: string;
+    REPORT_UV: string;
 }
 
 export interface ConfigOptionType extends Options, DefaultOption {
 }
 
 export interface MethodOptions {
-    method: MethodType;
     url: string;
-    data: Object;
+    data: any;
 }

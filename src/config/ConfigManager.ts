@@ -12,6 +12,7 @@ export class ConfigManager {
             userId: generateUserId(),
             sessionId: generateSessionId(),
             REPORT_PV: '',
+            REPORT_UV: '',
         };
 
         if (!options.report || !options.appId) {
@@ -20,6 +21,7 @@ export class ConfigManager {
 
         this.options = {...defaultOption, ...options};
         this.options.REPORT_PV = `${this.options.report}/pv`;
+        this.options.REPORT_UV = `${this.options.report}/uv`;
     }
 
     public static getInstance(options?: Options): ConfigManager {

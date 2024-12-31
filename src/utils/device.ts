@@ -1,6 +1,6 @@
-import {WINDOW} from '../types';
-import {UAParser} from 'ua-parser-js';
-import {uuid} from "./uuid";
+import { WINDOW } from '../types';
+import { UAParser } from 'ua-parser-js';
+import { uuid } from './uuid';
 
 /**
  * 生成设备 ID
@@ -21,7 +21,7 @@ export const generateDeviceId = () => {
  * 获取设备信息
  */
 export const getDeviceInfo = () => {
-    const {browser, device, engine, os} = UAParser(WINDOW.navigator.userAgent);
+    const { browser, device, engine, os } = UAParser(WINDOW.navigator.userAgent);
 
     return {
         // 当前浏览器的用户代理

@@ -1,5 +1,5 @@
 import { ConfigManager } from './ConfigManager';
-import {ConfigOptionType, Options} from '../types';
+import { ConfigOptionType, Options } from '../types';
 
 let configInstance: ConfigManager | null = null;
 

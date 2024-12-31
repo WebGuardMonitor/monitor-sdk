@@ -1,21 +1,46 @@
-import {Options, WINDOW} from "./types";
-import {generateDeviceId, generateSessionId, generateUserId, getDeviceInfo} from "./utils";
+import {Options} from './types';
+import Config from './config/config';
+import {generateDeviceId} from './utils';
+import {EventComposite} from './helper/EventComposite';
+import {PageViewMonitor, UniqueVisitorMonitor} from "./monitor";
 
-export const init = (options: Options) => {
+class TraceSDK {
+    public readonly version: string = '1.0.1';
+    private event: EventComposite;
 
-    // 获取浏览器设备指纹 ID
-    generateDeviceId();
+    constructor(options: Options) {
+        console.log('监控构造中...');
+        // 配置信息
+        Config.init(options);
 
-    const defaultOption = {
-        report: '',
-        appId: '',
-        userId: generateUserId(),
-        sessionId: generateSessionId()
+        // 写入设备指纹 ID
+        generateDeviceId();
+
+        this.event = this.registerEvent();
+
+        this.init();
     }
 
-    // @ts-ignore
-    WINDOW.option = {...defaultOption, ...options}
+    /**
+     * 初始化
+     * @private
+     */
+    private init() {
+        this.event.init();
+    }
 
-    console.log(WINDOW.option)
-    console.log(getDeviceInfo())
+    /**
+     * 注册事件
+     * @private
+     */
+    private registerEvent(): EventComposite {
+        const event = new EventComposite();
+
+        event.register(new PageViewMonitor());
+        event.register(new UniqueVisitorMonitor());
+
+        return event;
+    }
 }
+
+(globalThis as any).TraceSDK = TraceSDK;

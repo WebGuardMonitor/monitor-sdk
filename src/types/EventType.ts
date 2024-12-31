@@ -1,5 +1,5 @@
 export type EventType =
-    'pv'
+    | 'pv'
     | 'performance'
     | 'js_error'
     | 'promise_error'
@@ -14,4 +14,4 @@ export type EventType =
     | 'rejectionhandled_event'
     | 'fetch_event'
     | 'xhr_event'
-    | 'history_event'
+    | 'history_event';

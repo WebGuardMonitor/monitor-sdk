@@ -1,7 +1,10 @@
-declare var msCrypto: { getRandomValues: { bind: (arg0: any) => any; }; };
+declare var msCrypto: { getRandomValues: { bind: (arg0: any) => any } };
 
-const getRandomValues = (typeof (crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
-    (typeof (msCrypto) != 'undefined' && typeof (window as any).msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+const getRandomValues =
+    (typeof crypto != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+    (typeof msCrypto != 'undefined' &&
+        typeof (window as any).msCrypto.getRandomValues == 'function' &&
+        msCrypto.getRandomValues.bind(msCrypto));
 
 export const rngBrowser = (function () {
     if (getRandomValues) {
@@ -23,7 +26,7 @@ export const rngBrowser = (function () {
             for (var i = 0, r; i < 16; i++) {
                 if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
                 // @ts-ignore
-                rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+                rnds[i] = (r >>> ((i & 0x03) << 3)) & 0xff;
             }
 
             return rnds;

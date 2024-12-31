@@ -7,12 +7,26 @@ export const bytesToUuid = (buf: any, offset: number = 0): string => {
     let i = offset || 0;
     const bth = byteToHex;
     // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
-    return ([bth[buf[i++]], bth[buf[i++]],
-        bth[buf[i++]], bth[buf[i++]], '-',
-        bth[buf[i++]], bth[buf[i++]], '-',
-        bth[buf[i++]], bth[buf[i++]], '-',
-        bth[buf[i++]], bth[buf[i++]], '-',
-        bth[buf[i++]], bth[buf[i++]],
-        bth[buf[i++]], bth[buf[i++]],
-        bth[buf[i++]], bth[buf[i++]]]).join('');
-}
+    return [
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+        '-',
+        bth[buf[i++]],
+        bth[buf[i++]],
+        '-',
+        bth[buf[i++]],
+        bth[buf[i++]],
+        '-',
+        bth[buf[i++]],
+        bth[buf[i++]],
+        '-',
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+        bth[buf[i++]],
+    ].join('');
+};

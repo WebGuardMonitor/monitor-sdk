@@ -1,19 +1,16 @@
-import {EventType, MethodOptions, MethodType, WINDOW} from '../types';
-import Config from "../config/config";
-import {joinQueryWithMap} from "./index";
+import {EventType, METHOD_GET, METHOD_POST, MethodOptions, MethodType, WINDOW} from '../types';
+import {joinQueryWithMap} from './index';
 
-/**
- * 发生上报数据
- * @param evType 上报类型
- * @param data 上报的数据
- */
 export const sendData = (evType: EventType, data: Object | Array<object>) => {
     setTimeout(() => {
-        console.log({
-            ev_type: evType,
-            payload: data,
-        }, WINDOW.DeviceFingerprintId)
-    }, 10)
+        console.log(
+            {
+                ev_type: evType,
+                payload: data,
+            },
+            WINDOW.DeviceFingerprintId,
+        );
+    }, 10);
 
     // // 优先使用 sendBeacon ，但是他有发送上限 data 最大
     // if (WINDOW.navigator.sendBeacon) {
@@ -25,31 +22,41 @@ export const sendData = (evType: EventType, data: Object | Array<object>) => {
     // }
 };
 
+
+const _request = (method: MethodType, url: string, data: Document | XMLHttpRequestBodyInit | null) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.send(data);
+}
+
+
+/**
+ * 创建发送器
+ */
 const createBrowserSender = {
-    __request(method: MethodType, url: string, data: Document | XMLHttpRequestBodyInit | null) {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xhr.send(data);
-    },
+    /**
+     * 使用 XHR 发送数据
+     */
     sendHttp() {
         return {
             get(option: MethodOptions) {
                 const url = option.url + '?' + joinQueryWithMap(option.data);
-                console.log(url)
-                createBrowserSender.__request(option.method, url, null)
+                _request(METHOD_GET, url, null);
             },
-            post(data: Object | Array<Object>) {
-                // createBrowserSender._request(METHOD_POST, data)
-            }
-        }
+            post(option: MethodOptions) {
+                _request(METHOD_POST, option.url, option.data);
+            },
+        };
     },
-    sendBeacon(data: Object | Array<Object>) {
-        WINDOW.navigator.sendBeacon(Config.get('report'), JSON.stringify(data));
+    /**
+     * 使用 sendBeacon 发送数据
+     * @param option
+     */
+    sendBeacon(option: MethodOptions) {
+        console.log('sendBeacon', JSON.stringify(option.data))
+        WINDOW.navigator.sendBeacon(option.url, JSON.stringify(option.data));
     },
+};
 
-}
-
-export {
-    createBrowserSender
-}
+export {createBrowserSender};

@@ -1,10 +1,10 @@
-import {bytesToUuid} from "./bytesToUuid";
-import { rngBrowser as rng} from './rng-browser';
+import { bytesToUuid } from './bytesToUuid';
+import { rngBrowser as rng } from './rng-browser';
 
-export const uuid = (options: any = null as any, buf: any = null as any, offset: number = 0):string => {
-    const i = buf && offset || 0;
+export const uuid = (options: any = null as any, buf: any = null as any, offset: number = 0): string => {
+    const i = (buf && offset) || 0;
 
-    if (typeof(options) == 'string') {
+    if (typeof options == 'string') {
         buf = options === 'binary' ? new Array(16) : null;
         options = null;
     }
@@ -24,4 +24,4 @@ export const uuid = (options: any = null as any, buf: any = null as any, offset:
     }
 
     return buf || bytesToUuid(rnds);
-}
+};

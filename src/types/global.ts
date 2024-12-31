@@ -1,4 +1,4 @@
-import {Options} from "./option";
+import { Options } from './option';
 
 export type InternalGlobal = {
     option: Options;

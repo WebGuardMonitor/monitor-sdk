@@ -11,13 +11,15 @@ export const generatePassword = (len: number = 32): string => {
         return result[0];
     };
 
-    return Array.from({length: len}).map(() => {
-        let result = '';
-        do {
-            // @ts-ignore
-            result = String.fromCharCode(getBytes());
-        } while (!/[a-zA-Z0-9_\-+.$#%&^*()!~`]/.test(result));
+    return Array.from({ length: len })
+        .map(() => {
+            let result = '';
+            do {
+                // @ts-ignore
+                result = String.fromCharCode(getBytes());
+            } while (!/[a-zA-Z0-9_\-+.$#%&^*()!~`]/.test(result));
 
-        return result;
-    }).join('');
-}
+            return result;
+        })
+        .join('');
+};
