@@ -1,7 +1,7 @@
 <p align="center">
     <img src="monitor.svg" alt="Monitor-Sdk" width="350" height="350"/>
 </p>
-<h1 style="text-align: center">Monitor-Sdk</h1>
+<h1 align="center">Monitor-Sdk</h1>
 
 ## 目前完成功能
 
