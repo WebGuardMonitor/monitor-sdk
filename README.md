@@ -1,4 +1,20 @@
-<h1 style="text-align: center">monitor-sdk</h1>
+<p align="center">
+    <img src="monitor.svg" alt="Monitor-Sdk" width="350" height="350"/>
+</p>
+<h1 style="text-align: center">Monitor-Sdk</h1>
+
+## 目前完成功能
+
+1. [✔️] PV 上报
+2. [✔️] UV 上报
+3. [✔️] performance 总线时长上报
+4. [✔️] FP 指标上报
+5. [✔️] CLS 指标上报
+6. [✔️] FCP 指标上报
+7. [✔️] FID 指标上报
+8. [✔️] INP 指标上报
+9. [✔️] LCP 指标上报
+10. [✔️] TTFB 指标上报
 
 ## 参考文献
 

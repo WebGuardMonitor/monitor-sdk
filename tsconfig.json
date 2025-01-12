@@ -1,13 +1,19 @@
 {
     "compilerOptions": {
+        // 严格模式
         "strict": true,
+        // 编译成什么版本
         "target": "ESNext",
+        // 当前代码语法
         "module": "ESNext",
+        // 是否自动创建类型声明文件
         "declaration": true,
+        "declarationDir": "./dist/types/",
         "sourceMap": true,
+        // 引入package.json不会报红
         "moduleResolution": "node",
+        // 以严格模式解析并为每个源文件生成 "use strict"语句
         "alwaysStrict": false,
-        //        "declaration": true,
         "declarationMap": true,
         "downlevelIteration": true,
         "importHelpers": true,
@@ -30,6 +36,6 @@
         "esModuleInterop": true
     },
     "include": [
-        "src/**/*",
+        "src/**/*"
     ]
 }

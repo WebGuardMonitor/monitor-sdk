@@ -16,11 +16,11 @@
 
 import {WINDOW} from "../types";
 
-export const getNavigationEntry = (): PerformanceNavigationTiming | void => {
+export const getNavigationEntry = (): PerformanceNavigationTiming => {
     const perf = WINDOW.performance;
 
     if (!perf || !perf.getEntriesByType) {
-        return;
+        throw new Error('Performance API not available');
     }
 
     const navigationEntries = perf.getEntriesByType('navigation') as PerformanceNavigationTiming[];
@@ -33,4 +33,7 @@ export const getNavigationEntry = (): PerformanceNavigationTiming | void => {
     ) {
         return navigationEntry;
     }
+
+    // 如果没有找到符合条件的 entry，可以考虑抛出异常或返回一个默认对象
+    throw new Error('No valid navigation entry found');
 };

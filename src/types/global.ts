@@ -10,6 +10,7 @@ export type InternalGlobal = {
             platform: string;
         };
     };
+    PerformanceObserver: PerformanceObserver;
 };
 
 export const GLOBAL_OBJ = globalThis as unknown as InternalGlobal;

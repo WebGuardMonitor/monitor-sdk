@@ -6,15 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="875f02e6-1b1f-4922-aa39-1a68b85e12c0" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/constant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/getNavigationEntry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/getNavigationEntry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/onHidden.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/onHidden.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/monitor/behavior/page-view.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/behavior/page-view.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/EventType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/EventType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/option.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sendData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/performance/performance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/performance/performance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/performance/web-vitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/onFP.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initFCP.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/is.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/is.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +72,7 @@
       <recent name="$PROJECT_DIR$/src/monitor/behavior" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -111,10 +115,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
-        <item itemvalue="npm.preview" />
-        <item itemvalue="npm.format" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.preview" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.format" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +141,12 @@
       <workItem from="1735531199707" duration="24156000" />
       <workItem from="1735624380645" duration="19000" />
       <workItem from="1735624478341" duration="9543000" />
-      <workItem from="1735634594753" duration="17114000" />
+      <workItem from="1735634594753" duration="26978000" />
+      <workItem from="1735802766129" duration="8395000" />
+      <workItem from="1735873423089" duration="873000" />
+      <workItem from="1735881458440" duration="7894000" />
+      <workItem from="1736425285836" duration="6000" />
+      <workItem from="1736688405301" duration="3912000" />
     </task>
     <servers />
   </component>

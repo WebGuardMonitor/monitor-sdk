@@ -1,7 +1,11 @@
 import {MonitorImplements} from "../../types";
-import {createBrowserSender} from "../../utils";
-import {getReportUrl} from "../../helper/BasicUrl";
-import {onFP} from "./web-vitals/onFP";
+import {initTTFB} from "./web-vitals/initTTFB";
+import {initLCP} from "./web-vitals/initLCP";
+import {initINP} from "./web-vitals/initINP";
+import {initFCP} from "./web-vitals/initFCP";
+import {initFID} from "./web-vitals/initFID";
+import {initCLS} from "./web-vitals/initCLS";
+import {initFP} from "./web-vitals/initFP";
 
 const VitalsStatus = {
     fp: false,
@@ -22,30 +26,25 @@ const VitalsStatus = {
 export class WebVitalsMonitor implements MonitorImplements {
     initialize() {
         // TODO: 添加 Web Vitals 监控逻辑
-        console.log('TODO 获取 FP、FCP、FMP、LCP、FID、SI、TBT、INP、CLS、TTi、TTFB、DCL、Load、FPS 数据指标')
-        onFP(() => {
-            console.log('FP')
-        })
+        console.log('TODO 获取 FMP、SI、TBT、TTi、DCL、Load、FPS 数据指标')
 
-        createBrowserSender.sendHttp().post({
-            url: getReportUrl(),
-            data: {
-                fp: 0,
-                fcp: 0,
-                fmp: 0,
-                lcp: 0,
-                fid: 0,
-                si: 0,
-                tbt: 0,
-                inp: 0,
-                cls: 0,
-                tti: 0,
-                ttfb: 0,
-                dcl: 0,
-                load: 0,
-            }
-        })
+        // FMP
+        // SI
+        // TBT
+        // TTi
+        // DCL
+        // Load
+        // FPS
 
         // TODO  FPS 单独获取
+
+        // TODO 以下指标以成功获取
+        initFP()
+        initCLS()
+        initFCP()
+        initFID()
+        initINP()
+        initLCP()
+        initTTFB()
     }
 }

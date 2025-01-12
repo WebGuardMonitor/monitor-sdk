@@ -23,3 +23,5 @@ export const VITALS_TTFB = 'ttfb';
 export const VITALS_DCL = 'dcl';
 export const VITALS_LOAD = 'load';
 export const VITALS_FPS = 'fps';
+
+export const COMPLETE = 'complete';

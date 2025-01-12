@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <script src="http://localhost:1024/index.global.js"></script>
+        <script>
+            // TraceSdk.init({
+            //     report: 'http://localhost:1024/report',
+            //     appId: 'test',
+            //     // userId: 'test'
+            // })
+            const sdk = new TraceSDK({
+                report: 'http://localhost:3000/monitor',
+                appId: 'test',
+                // userId: 'test'
+            });
+        </script>
+    </head>
+    <body>
+    <p>这是一条内容</p>
+    </body>
+</html>

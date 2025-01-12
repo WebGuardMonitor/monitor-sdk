@@ -47,6 +47,17 @@ class TraceSDK {
         // 网站性能数据指标上报
         event.register(new WebVitalsMonitor())
 
+        // Js Error 错误上报
+        // Promise 错误上报
+        // 异常请求错误上报 xhr、fetch、
+        // 资源数据上报
+        // 点击事件上报
+        // 滚动事件
+        // 页面停留数据上报
+        // 页面跳转
+        //
+
+
         return event;
     }
 }
