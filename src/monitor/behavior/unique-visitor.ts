@@ -21,7 +21,7 @@ export class UniqueVisitorMonitor implements MonitorImplements {
                 url: getUvUrl(),
                 data: buildBasicData()
             })
-        }, {})
+        })
 
         return;
     }

@@ -20,6 +20,7 @@
     "description": "前端错误链路追踪以及性能监控",
     "devDependencies": {
         "prettier": "3.4.2",
+        "radash": "^12.1.0",
         "tsup": "^8.3.5",
         "typescript": "^5.7.2",
         "vite": "^6.0.6"

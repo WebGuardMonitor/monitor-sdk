@@ -25,3 +25,6 @@ export const VITALS_LOAD = 'load';
 export const VITALS_FPS = 'fps';
 
 export const COMPLETE = 'complete';
+
+export const CLICK_EV_TYPE = 'click_event'
+export const BATCH_TYPE = 'batch'

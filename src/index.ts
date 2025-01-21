@@ -3,6 +3,7 @@ import Config from './config/config';
 import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
 import {PageViewMonitor, PerformanceMonitor, UniqueVisitorMonitor, WebVitalsMonitor} from "./monitor";
+import {DomMonitor} from "./monitor/behavior/dom";
 
 class TraceSDK {
     public readonly version: string = '1.0.1';
@@ -63,7 +64,7 @@ class TraceSDK {
         // 资源数据上报
         // 点击事件上报
         if (Config.get('initClick')) {
-            // TODO
+            event.register(new DomMonitor())
         }
         // 滚动事件
         // 页面停留数据上报

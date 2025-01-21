@@ -48,9 +48,7 @@ export const buildBasicData = () => {
 export const constructReportData = (evType: EventType, data: Object) => {
     return {
         ev_type: evType,
-        payload: {
-            ...data,
-            ...buildBasicData()
-        }
+        payload: data,
+        common: buildBasicData()
     }
 }
