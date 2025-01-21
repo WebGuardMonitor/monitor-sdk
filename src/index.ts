@@ -27,6 +27,7 @@ class TraceSDK {
      */
     private init() {
         this.event.init();
+        console.log(Config.getAll())
     }
 
     /**
@@ -37,21 +38,33 @@ class TraceSDK {
         const event = new EventComposite();
 
         // PV 上报
-        event.register(new PageViewMonitor());
+        if (Config.get('initPV')) {
+            event.register(new PageViewMonitor());
+        }
+
         // UV 上报
-        event.register(new UniqueVisitorMonitor());
+        if (Config.get('initUV')) {
+            event.register(new UniqueVisitorMonitor());
+        }
 
         // performance 时长总线上报
-        event.register(new PerformanceMonitor())
+        if (Config.get('initPerformance')) {
+            event.register(new PerformanceMonitor())
+        }
 
         // 网站性能数据指标上报
-        event.register(new WebVitalsMonitor())
+        if (Config.get('initWebVitals')) {
+            event.register(new WebVitalsMonitor())
+        }
 
         // Js Error 错误上报
         // Promise 错误上报
         // 异常请求错误上报 xhr、fetch、
         // 资源数据上报
         // 点击事件上报
+        if (Config.get('initClick')) {
+            // TODO
+        }
         // 滚动事件
         // 页面停留数据上报
         // 页面跳转

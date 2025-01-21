@@ -7,6 +7,16 @@ export interface Options {
     userId?: string;
     // 会话 ID
     sessionId?: string;
+    // 是否开启 PV 上报
+    initPV: boolean,
+    // 是否开启 UV 上报
+    initUV: boolean,
+    // 是否启动 performance 指标上报
+    initPerformance: boolean,
+    // 是否开启网站性能指标数据上报
+    initWebVitals: boolean,
+    // 是否开启点击事件上报
+    initClick: boolean,
 }
 
 export interface DefaultOption {

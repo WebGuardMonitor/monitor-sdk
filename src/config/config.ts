@@ -1,5 +1,5 @@
-import { ConfigManager } from './ConfigManager';
-import { ConfigOptionType, Options } from '../types';
+import {ConfigManager} from './ConfigManager';
+import {ConfigOptionType, Options} from '../types';
 
 let configInstance: ConfigManager | null = null;
 
@@ -25,8 +25,14 @@ const set = (key: string, value: any) => {
     }
     configInstance.setOption(key, value);
 };
+
+const getAll = () => {
+    return configInstance?.getAllOptions()
+}
+
 export default {
     init: initConfig,
     get,
     set,
+    getAll
 };

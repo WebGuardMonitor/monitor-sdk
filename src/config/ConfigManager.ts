@@ -11,8 +11,20 @@ export class ConfigManager {
             appId: '',
             userId: generateUserId(),
             sessionId: generateSessionId(),
+            // PV 上报地址
             REPORT_PV: '',
+            // UV 上报地址
             REPORT_UV: '',
+            // 是否启动 PV
+            initPV: false,
+            // 是否启动 UV
+            initUV: false,
+            // 是否启动性能指标
+            initPerformance: false,
+            // 是否启动网站指标
+            initWebVitals: false,
+            // 是否开启点击事件上报
+            initClick: false,
         };
 
         if (!options.report || !options.appId) {
@@ -46,5 +58,9 @@ export class ConfigManager {
     setOption(key: string, value: any): void {
         // @ts-ignore
         this.options[key] = value;
+    }
+
+    getAllOptions(): ConfigOptionType {
+        return this.options;
     }
 }
