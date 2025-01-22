@@ -28,7 +28,9 @@ export class ConfigManager {
             // 是否开启点击事件上报
             isClickEvent: false,
             // 是否开启屏幕录制
-            isRecord:false,
+            isRecord: false,
+            // 是否上报数据资源
+            isResource: false
         };
 
         if (!options.report || !options.appId) {

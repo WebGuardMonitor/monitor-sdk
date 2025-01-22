@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" href="index.css"/>
     <script src="http://localhost:1024/index.global.js"></script>
     <script>
         // TraceSdk.init({
@@ -19,7 +20,8 @@
             isPerformance: false,
             isWebVitals: false,
             isPromiseError: true,
-            isClickEvent: false
+            isClickEvent: false,
+            isResource: true
         });
     </script>
 </head>
@@ -33,6 +35,38 @@
         })
     }
 </script>
+
+<!-- 资源加载演示 -->
+<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.jpeg"
+     alt="sss"/>
+
+
+<iframe src="base.html" width="200" height="300"></iframe>
+
+<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
+
+<video controls width="250">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>
+
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>
+</video>
+
+<script>
+    fetch('https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js')
+        .then(res => console.log(res))
+</script>
+
+<script>
+    (() => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')
+        xhr.onload = (e) => {
+            console.log('这个是 xml http request 内容', e)
+        }
+        xhr.send()
+    })()
+</script>
+
 
 </body>
 </html>

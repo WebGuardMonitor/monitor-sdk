@@ -20,7 +20,9 @@ export interface Options {
     // 是否开启点击事件上报
     isClickEvent: boolean,
     // 是否开启屏幕录制
-    isRecord: boolean
+    isRecord: boolean,
+    // 是否上报数据资源
+    isResource: boolean
 }
 
 export interface DefaultOption {

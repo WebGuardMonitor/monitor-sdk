@@ -7,6 +7,7 @@ import {
     PageViewMonitor,
     PerformanceMonitor,
     PromiseErrorMonitor,
+    ResourceTimingMonitor,
     UniqueVisitorMonitor,
     WebVitalsMonitor
 } from "./monitor";
@@ -75,12 +76,19 @@ class TraceSDK {
         }
 
         // Js Error 错误上报
+
         // Promise 错误上报
         if (Config.get('isPromiseError')) {
             event.register(new PromiseErrorMonitor())
         }
+
         // 异常请求错误上报 xhr、fetch、
+
         // 资源数据上报
+        if (Config.get('isResource')) {
+            event.register(new ResourceTimingMonitor())
+        }
+
         // 点击事件上报
         if (Config.get('isClickEvent')) {
             event.register(new DomMonitor())
