@@ -2,7 +2,14 @@ import {Options} from './types';
 import Config from './config/config';
 import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
-import {DomMonitor, PageViewMonitor, PerformanceMonitor, UniqueVisitorMonitor, WebVitalsMonitor} from "./monitor";
+import {
+    DomMonitor,
+    PageViewMonitor,
+    PerformanceMonitor,
+    PromiseErrorMonitor,
+    UniqueVisitorMonitor,
+    WebVitalsMonitor
+} from "./monitor";
 import {Sender} from "./common/sender";
 import {version} from "./version";
 
@@ -62,6 +69,9 @@ class TraceSDK {
 
         // Js Error 错误上报
         // Promise 错误上报
+        if (Config.get('initPromiseError')) {
+            event.register(new PromiseErrorMonitor())
+        }
         // 异常请求错误上报 xhr、fetch、
         // 资源数据上报
         // 点击事件上报

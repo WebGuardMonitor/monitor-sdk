@@ -2,6 +2,7 @@ import {
     BATCH_TYPE,
     CLICK_EV_TYPE,
     PERFORMANCE_TIMING_EV_TYPE,
+    PROMISE_TYPE,
     VITALS_CLS,
     VITALS_FCP,
     VITALS_FID,
@@ -23,3 +24,4 @@ export type EventType =
     | typeof VITALS_INP
     | typeof VITALS_LCP
     | typeof VITALS_TTFB
+    | typeof PROMISE_TYPE

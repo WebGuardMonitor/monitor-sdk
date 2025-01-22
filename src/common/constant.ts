@@ -28,3 +28,4 @@ export const COMPLETE = 'complete';
 
 export const CLICK_EV_TYPE = 'click_event'
 export const BATCH_TYPE = 'batch'
+export const PROMISE_TYPE = 'promise_error'

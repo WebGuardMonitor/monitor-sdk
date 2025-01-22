@@ -23,6 +23,8 @@ export class ConfigManager {
             initPerformance: false,
             // 是否启动网站指标
             initWebVitals: false,
+            // 是否开启 Promise 错误上报
+            initPromiseError: false,
             // 是否开启点击事件上报
             initClick: false,
         };

@@ -18,7 +18,8 @@
             initUV: false,
             initPerformance: false,
             initWebVitals: false,
-            initClick: true
+            initPromiseError: true,
+            initClick: false
         });
     </script>
 </head>
@@ -27,7 +28,9 @@
 <button onClick="logEvent(event)">点击</button>
 <script>
     function logEvent(event) {
-        console.log(123);
+        new Promise((resolve, reject) => {
+            reject('ddd');
+        })
     }
 </script>
 

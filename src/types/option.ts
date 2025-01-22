@@ -15,6 +15,8 @@ export interface Options {
     initPerformance: boolean,
     // 是否开启网站性能指标数据上报
     initWebVitals: boolean,
+    // 是否开启 Promise 错误上报
+    initPromiseError: boolean,
     // 是否开启点击事件上报
     initClick: boolean,
 }
