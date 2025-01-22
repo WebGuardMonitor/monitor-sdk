@@ -54,34 +54,34 @@ class TraceSDK {
         const event = new EventComposite();
 
         // PV 上报
-        if (Config.get('initPV')) {
+        if (Config.get('isPageView')) {
             event.register(new PageViewMonitor());
         }
 
         // UV 上报
-        if (Config.get('initUV')) {
+        if (Config.get('isUniqueVisitor')) {
             event.register(new UniqueVisitorMonitor());
         }
 
         // performance 时长总线上报
-        if (Config.get('initPerformance')) {
+        if (Config.get('isPerformance')) {
             event.register(new PerformanceMonitor())
         }
 
         // 网站性能数据指标上报
-        if (Config.get('initWebVitals')) {
+        if (Config.get('isWebVitals')) {
             event.register(new WebVitalsMonitor())
         }
 
         // Js Error 错误上报
         // Promise 错误上报
-        if (Config.get('initPromiseError')) {
+        if (Config.get('isPromiseError')) {
             event.register(new PromiseErrorMonitor())
         }
         // 异常请求错误上报 xhr、fetch、
         // 资源数据上报
         // 点击事件上报
-        if (Config.get('initClick')) {
+        if (Config.get('isClickEvent')) {
             event.register(new DomMonitor())
         }
         // 滚动事件

@@ -16,17 +16,17 @@ export class ConfigManager {
             // UV 上报地址
             REPORT_UV: '',
             // 是否启动 PV
-            initPV: false,
+            isPageView: false,
             // 是否启动 UV
-            initUV: false,
+            isUniqueVisitor: false,
             // 是否启动性能指标
-            initPerformance: false,
+            isPerformance: false,
             // 是否启动网站指标
-            initWebVitals: false,
+            isWebVitals: false,
             // 是否开启 Promise 错误上报
-            initPromiseError: false,
+            isPromiseError: false,
             // 是否开启点击事件上报
-            initClick: false,
+            isClickEvent: false,
             // 是否开启屏幕录制
             isRecord:false,
         };

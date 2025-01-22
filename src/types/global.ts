@@ -1,5 +1,6 @@
 import {Options} from './option';
 import {Sender} from "../common/sender";
+import type {Database} from "../common";
 
 export type InternalGlobal = {
     option: Options;
@@ -12,7 +13,8 @@ export type InternalGlobal = {
         };
     };
     PerformanceObserver: PerformanceObserver;
-    Sender: Sender
+    Sender: Sender;
+    DataBase: Database;
 };
 
 export const GLOBAL_OBJ = globalThis as unknown as InternalGlobal;
