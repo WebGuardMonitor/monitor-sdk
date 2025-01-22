@@ -1,6 +1,6 @@
 import Config from "../config/config";
 import {EventType, WINDOW} from "../types";
-import {getDeviceInfo} from "../utils";
+import {getDeviceInfo, uuid} from "../utils";
 
 /**
  * 获取会话 ID
@@ -33,7 +33,8 @@ export const buildBasicData = () => {
             sessionId: getSessionId(),
             userId: getUserId(),
             deviceId: getDeviceId(),
-            timestamp: Date.now()
+            timestamp: Date.now(),
+            traceId: uuid()
         },
         ...getDeviceInfo()
     }

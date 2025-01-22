@@ -1,31 +1,31 @@
 import {MonitorImplements, WINDOW} from "../../types";
 import {uuid} from "../../utils";
-import {bindReporter} from "../../helper/bindReporter";
-import {BATCH_TYPE, CLICK_EV_TYPE} from "../../common";
+import {CLICK_EV_TYPE} from "../../common";
 import {constructReportData} from "../../helper/BasicData";
 
-type ClickType = Event | MouseEvent | TouchEvent;
+type ClickType = MouseEvent;
 
 export class DomMonitor implements MonitorImplements {
-    // 上报事件数据数量
-    private readonly MAX_EVENTS = 30;
-    // 存储点击事件的数组
-    private events: any[] = [];
 
-    private readonly DEBOUNCE_DELAY = 300; // 防抖延迟时间（毫秒）
+    // 防抖延迟时间（毫秒）
+    private readonly DEBOUNCE_DELAY = 300;
 
     initialize() {
         // const eventTypes = ['click', 'mousedown', 'mouseup', 'touchstart', 'touchend'];
         // eventTypes.forEach(addListener);
 
         if (typeof window.addEventListener === 'function') {
+
             WINDOW.addEventListener('click', (event: ClickType) => {
                 this.handleClick(event)
             }, false)
+
         } else if (typeof (window as any).attachEvent === 'function') {
+
             (document as any).attachEvent('onclick', (event: ClickType) => {
                 this.handleClick(event)
             }, false)
+
         }
         // const addListener = () => {
         //     WINDOW.addEventListener('beforeunload', (event: ClickType) => {
@@ -65,24 +65,7 @@ export class DomMonitor implements MonitorImplements {
             // win: JSON.stringify(WINDOW)
         }
 
-        this.events.push(constructReportData(CLICK_EV_TYPE, clickEvent))
+        WINDOW.Sender.push(constructReportData(CLICK_EV_TYPE, clickEvent))
 
-        if (this.events.length >= this.MAX_EVENTS) {
-            this.reportEvents();
-        }
-
-    }
-
-    /**
-     * 封装事件上报
-     */
-    reportEvents() {
-        if (this.events.length === 0) return
-
-        const clicksToReport = [...this.events]
-        this.events = []
-        // console.log('数据要上报咯', clicksToReport)
-
-        bindReporter(constructReportData(BATCH_TYPE, clicksToReport))
     }
 }

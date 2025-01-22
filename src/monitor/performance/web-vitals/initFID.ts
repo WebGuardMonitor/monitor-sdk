@@ -1,6 +1,7 @@
 import {VITALS_FID} from "../../../common";
-import {bindReporter} from "../../../helper/bindReporter";
 import {onFID} from "web-vitals";
+import {WINDOW} from "../../../types";
+import {constructReportData} from "../../../helper/BasicData";
 
 export const initFID = () => {
     // whenActivated(() => {
@@ -32,11 +33,11 @@ export const initFID = () => {
     // })
 
     onFID((metric) => {
-        bindReporter({
+        WINDOW.Sender.push(constructReportData(VITALS_FID, {
             name: VITALS_FID,
             metric: metric.value,
             entry: metric.entries,
             vitals: metric
-        })
+        }))
     })
 }

@@ -1,7 +1,8 @@
 import {observe} from "../../../helper/observe";
 import {whenActivated} from "../../../helper/whenActivated";
 import {VITALS_FP} from "../../../common";
-import {bindReporter} from "../../../helper/bindReporter";
+import {WINDOW} from "../../../types";
+import {constructReportData} from "../../../helper/BasicData";
 
 export const initFP = () => {
     whenActivated(() => {
@@ -17,7 +18,8 @@ export const initFP = () => {
                         metric: entry.startTime,
                         entry
                     }
-                    bindReporter(data)
+
+                    WINDOW.Sender.push(constructReportData(VITALS_FP, data))
                 }
             })
         }

@@ -1,6 +1,7 @@
-import {bindReporter} from "../../../helper/bindReporter";
 import {VITALS_FCP} from "../../../common";
 import {onFCP} from "web-vitals";
+import {WINDOW} from "../../../types";
+import {constructReportData} from "../../../helper/BasicData";
 
 export const initFCP = () => {
     // whenActivated(() => {
@@ -23,11 +24,11 @@ export const initFCP = () => {
     //     const po = observe('paint', handleEntries)
     // })
     onFCP((metric) => {
-        bindReporter({
+        WINDOW.Sender.push(constructReportData(VITALS_FCP, {
             name: VITALS_FCP,
             metric: metric.value,
             entry: metric.entries,
             vitals: metric
-        })
+        }))
     })
 }

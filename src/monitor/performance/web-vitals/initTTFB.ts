@@ -1,6 +1,7 @@
 import {onTTFB} from "web-vitals";
-import {bindReporter} from "../../../helper/bindReporter";
 import {VITALS_TTFB} from "../../../common";
+import {WINDOW} from "../../../types";
+import {constructReportData} from "../../../helper/BasicData";
 
 export const initTTFB = () => {
     // whenReady(() => {
@@ -15,11 +16,11 @@ export const initTTFB = () => {
     //     bindReporter(data)
     // })
     onTTFB((metric) => {
-        bindReporter({
+        WINDOW.Sender.push(constructReportData(VITALS_TTFB, {
             name: VITALS_TTFB,
             metric: metric.value,
             entry: metric.entries,
             vitals: metric
-        })
+        }))
     })
 }

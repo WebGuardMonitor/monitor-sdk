@@ -2,11 +2,13 @@ import {Options} from './types';
 import Config from './config/config';
 import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
-import {PageViewMonitor, PerformanceMonitor, UniqueVisitorMonitor, WebVitalsMonitor} from "./monitor";
-import {DomMonitor} from "./monitor/behavior/dom";
+import {DomMonitor, PageViewMonitor, PerformanceMonitor, UniqueVisitorMonitor, WebVitalsMonitor} from "./monitor";
+import {Sender} from "./common/sender";
+import {version} from "./version";
 
 class TraceSDK {
-    public readonly version: string = '1.0.1';
+    public readonly version: string = version;
+
     private event: EventComposite;
 
     constructor(options: Options) {
@@ -76,4 +78,5 @@ class TraceSDK {
     }
 }
 
+(globalThis as any).Sender = new Sender();
 (globalThis as any).TraceSDK = TraceSDK;
