@@ -1,3 +1,8 @@
+/**
+ * 监听页面是否隐藏
+ * @param cb
+ * @param once
+ */
 export const onHidden = (cb: (e: Event) => void, once: boolean) => {
     const onHiddenOrPageHide = (event: Event) => {
         if (event.type === 'pagehide' || document.visibilityState === 'hidden') {
