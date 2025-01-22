@@ -13,6 +13,7 @@ import {
 import {Sender} from "./common/sender";
 import {version} from "./version";
 import {Rrweb} from "./helper/rrweb";
+import {Database} from "./common";
 
 class TraceSDK {
     public readonly version: string = version;
@@ -94,5 +95,6 @@ class TraceSDK {
     }
 }
 
+(globalThis as any).DataBase = new Database();
 (globalThis as any).Sender = new Sender();
 (globalThis as any).TraceSDK = TraceSDK;
