@@ -8,17 +8,17 @@ export interface Options {
     // 会话 ID
     sessionId?: string;
     // 是否开启 PV 上报
-    initPV: boolean,
+    isPageView: boolean,
     // 是否开启 UV 上报
-    initUV: boolean,
+    isUniqueVisitor: boolean,
     // 是否启动 performance 指标上报
-    initPerformance: boolean,
+    isPerformance: boolean,
     // 是否开启网站性能指标数据上报
-    initWebVitals: boolean,
+    isWebVitals: boolean,
     // 是否开启 Promise 错误上报
-    initPromiseError: boolean,
+    isPromiseError: boolean,
     // 是否开启点击事件上报
-    initClick: boolean,
+    isClickEvent: boolean,
     // 是否开启屏幕录制
     isRecord: boolean
 }
