@@ -19,6 +19,10 @@
     "license": "MIT",
     "description": "前端错误链路追踪以及性能监控",
     "devDependencies": {
+        "@rrweb/packer": "^2.0.0-alpha.18",
+        "@rrweb/record": "^2.0.0-alpha.18",
+        "js-base64": "^3.7.7",
+        "localforage": "^1.10.0",
         "prettier": "3.4.2",
         "radash": "^12.1.0",
         "tsup": "^8.3.5",

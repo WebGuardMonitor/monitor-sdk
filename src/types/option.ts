@@ -19,6 +19,8 @@ export interface Options {
     initPromiseError: boolean,
     // 是否开启点击事件上报
     initClick: boolean,
+    // 是否开启屏幕录制
+    isRecord: boolean
 }
 
 export interface DefaultOption {

@@ -12,6 +12,7 @@ import {
 } from "./monitor";
 import {Sender} from "./common/sender";
 import {version} from "./version";
+import {Rrweb} from "./helper/rrweb";
 
 class TraceSDK {
     public readonly version: string = version;
@@ -25,6 +26,11 @@ class TraceSDK {
 
         // 写入设备指纹 ID
         generateDeviceId();
+
+        // 开启 rrweb 录制
+        if (Config.get('isRecord')) {
+            new Rrweb().init();
+        }
 
         this.event = this.registerEvent();
 

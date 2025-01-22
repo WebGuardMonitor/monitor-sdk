@@ -27,6 +27,8 @@ export class ConfigManager {
             initPromiseError: false,
             // 是否开启点击事件上报
             initClick: false,
+            // 是否开启屏幕录制
+            isRecord:false,
         };
 
         if (!options.report || !options.appId) {
