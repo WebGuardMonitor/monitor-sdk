@@ -46,11 +46,13 @@ export class ResourceTimingMonitor implements MonitorImplements {
         entries.map(resource => {
             // console.log(JSON.stringify(resource), resource)
 
-            WINDOW.Sender.push(constructReportData(RESOURCE_TYPE, {
-                type: resource.initiatorType,
-                url: resource.name,
-                timing: resource.toJSON()
-            }))
+            if (this.staticResourceType.includes(resource.initiatorType)) {
+                WINDOW.Sender.push(constructReportData(RESOURCE_TYPE, {
+                    type: resource.initiatorType,
+                    url: resource.name,
+                    timing: resource.toJSON()
+                }))
+            }
         })
 
     }
