@@ -17,13 +17,12 @@ export class ResourceTimingMonitor implements MonitorImplements {
     // 数据类型
     private dataResourceType = ['fetch', 'xmlhttprequest']
 
-
     // 任务
     private schedule: number = 0;
 
     initialize() {
 
-        this.schedule = setInterval(this.collectResource, 2000)
+        this.schedule = setInterval(() => this.collectResource(), 2000)
 
         // page close hidden this schedule
         onHidden(() => {
@@ -32,7 +31,7 @@ export class ResourceTimingMonitor implements MonitorImplements {
 
         // page visible restart this schedule
         whenVisible(() => {
-            this.schedule = setInterval(this.collectResource, 2000)
+            this.schedule = setInterval(() => this.collectResource(), 2000)
         })
 
     }
@@ -44,7 +43,6 @@ export class ResourceTimingMonitor implements MonitorImplements {
         const entries = performance.getEntriesByType('resource') as PerformanceResourceTiming[] || [];
 
         entries.map(resource => {
-            // console.log(JSON.stringify(resource), resource)
 
             if (this.staticResourceType.includes(resource.initiatorType)) {
                 WINDOW.Sender.push(constructReportData(RESOURCE_TYPE, {
