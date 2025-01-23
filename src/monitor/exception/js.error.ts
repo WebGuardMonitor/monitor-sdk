@@ -3,6 +3,7 @@ import {buildTraceId} from "../../utils";
 import ErrorStackParser from "error-stack-parser";
 import {constructReportData} from "../../helper/BasicData";
 import {JS_ERROR_TYPE, RESOURCE_ERROR_TYPE} from "../../common";
+import {bindReporter} from "../../helper/bindReporter";
 
 interface ErrorInterface extends ErrorEvent {
     target: EventTarget & {
@@ -51,7 +52,7 @@ export class JsErrorMonitor implements MonitorImplements {
                     ].join('|'))
                 }
 
-                WINDOW.Sender.push(constructReportData(RESOURCE_ERROR_TYPE, resource_data))
+                bindReporter(constructReportData(RESOURCE_ERROR_TYPE, resource_data))
 
             } else {
                 const data = {
@@ -81,8 +82,7 @@ export class JsErrorMonitor implements MonitorImplements {
                     stackTrace: ErrorStackParser.parse(event.error)
                 };
 
-                console.log(event.error)
-                WINDOW.Sender.push(constructReportData(JS_ERROR_TYPE, data))
+                bindReporter(constructReportData(JS_ERROR_TYPE, data))
             }
 
         }, true)
