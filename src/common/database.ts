@@ -30,8 +30,6 @@ export class Database {
             version: finalConfig.version,
             storeName: finalConfig.storeName,
         });
-
-        console.log('Database initialized with config:', finalConfig);
     }
 
     /**

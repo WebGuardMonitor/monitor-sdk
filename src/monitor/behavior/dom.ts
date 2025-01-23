@@ -20,6 +20,8 @@ export class DomMonitor implements MonitorImplements {
                 this.handleClick(event)
             }, false)
 
+            // TODO 监听 keypress
+
         } else if (typeof (window as any).attachEvent === 'function') {
 
             (document as any).attachEvent('onclick', (event: ClickType) => {
