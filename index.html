@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
     <link rel="stylesheet" href="index.css"/>
-    <script src="http://localhost:1024/index.global.js"></script>
+    <script src="http://localhost:1024/index.global.js" crossorigin="anonymous"></script>
     <script>
         // TraceSdk.init({
         //     report: 'http://localhost:1024/report',
@@ -19,9 +19,12 @@
             isUniqueVisitor: false,
             isPerformance: false,
             isWebVitals: false,
-            isPromiseError: true,
+            isPromiseError: false,
             isClickEvent: false,
-            isResource: true
+            isResource: false,
+            isJsError: false,
+            isXhr: false,
+            isFetch: true
         });
     </script>
 </head>
@@ -30,42 +33,82 @@
 <button onClick="logEvent(event)">点击</button>
 <script>
     function logEvent(event) {
-        new Promise((resolve, reject) => {
-            reject('ddd');
-        })
+
+
+        // RangeError - 有效范围错误
+        let b = new Array(-1)
+
+        // ReferenceError - 引用错误
+        // log(event)
+
+        // SyntaxError - SyntaxError
+        // console.log(event
+
+        // TypeError - 类型错误
+        // let foo = 3;foo();
+
+        // URIError
+        // decodeURIComponent('%');
+
     }
 </script>
 
 <!-- 资源加载演示 -->
-<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.jpeg"
+<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.g"
      alt="sss"/>
 
 
-<iframe src="base.html" width="200" height="300"></iframe>
+<!--<iframe src="base.html" width="200" height="300"></iframe>-->
 
-<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
+<!--<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>-->
 
-<video controls width="250">
-    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>
+<!--<video controls width="250">-->
+<!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>-->
 
-    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>
-</video>
-
-<script>
-    fetch('https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js')
-        .then(res => console.log(res))
-</script>
+<!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>-->
+<!--</video>-->
 
 <script>
-    (() => {
-        const xhr = new XMLHttpRequest()
-        xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')
-        xhr.onload = (e) => {
-            console.log('这个是 xml http request 内容', e)
-        }
-        xhr.send()
-    })()
+    // fetch('https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js?xsa=dsad&dd=casd', {
+    //     headers: {
+    //         origin: 'alicdn.com'
+    //     }
+    // })
+    //     .then(res => console.log(res))
+
+    // fetch 成功例子
+    // fetch('https://api.feelgood.cn/athena/survey/platform/task/show/', {
+    //     method: 'post',
+    // })
+
+    // fetch 抛出 error 异常
+    // fetch('https://www.volcengine.com/api/search/hotWord?Pos=searchBar', {
+    //     method: 'post',
+    // })
+
+    // fetch('https://console.volcengine.com/api/passport/account/currentUser')
+    //     .then(res => res.json())
+    //     .then(res => console.log(res))
+    //     .catch(err => console.error('Error reporting failed:', err));
+
+    // fetch ！response.ok 异常
+    // fetch('http://localhost:3000/')
 </script>
+
+<!--<script>-->
+<!--    (() => {-->
+<!--        const xhr = new XMLHttpRequest()-->
+<!--        xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')-->
+<!--        // xhr.open('get', 'https://invalid-url-example.com/api/data')-->
+<!--        // xhr.setRequestHeader('Content-Type', 'application/json');-->
+<!--        // xhr.setRequestHeader('s', 'vasdasdjson');-->
+<!--        xhr.onload = (e) => {-->
+<!--            console.log('这个是 xml http request 内容', e)-->
+<!--        }-->
+<!--        xhr.send()-->
+<!--        console.log(xhr)-->
+<!--    })()-->
+<!--</script>-->
 
 
 </body>
