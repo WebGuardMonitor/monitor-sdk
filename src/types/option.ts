@@ -22,7 +22,13 @@ export interface Options {
     // 是否开启屏幕录制
     isRecord: boolean,
     // 是否上报数据资源
-    isResource: boolean
+    isResource: boolean,
+    // 是否 XHR
+    isXhr: boolean,
+    // 是否 fetch
+    isFetch: boolean,
+    // 是否 js error
+    isJsError: boolean
 }
 
 export interface DefaultOption {

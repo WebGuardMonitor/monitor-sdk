@@ -1,8 +1,10 @@
 import {
     BATCH_TYPE,
     CLICK_EV_TYPE,
+    JS_ERROR_TYPE,
     PERFORMANCE_TIMING_EV_TYPE,
     PROMISE_TYPE,
+    RESOURCE_ERROR_TYPE,
     RESOURCE_TYPE,
     VITALS_CLS,
     VITALS_FCP,
@@ -27,3 +29,5 @@ export type EventType =
     | typeof VITALS_TTFB
     | typeof PROMISE_TYPE
     | typeof RESOURCE_TYPE
+    | typeof JS_ERROR_TYPE
+    | typeof RESOURCE_ERROR_TYPE

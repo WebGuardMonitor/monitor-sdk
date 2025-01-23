@@ -21,6 +21,7 @@
     "devDependencies": {
         "@rrweb/packer": "^2.0.0-alpha.18",
         "@rrweb/record": "^2.0.0-alpha.18",
+        "error-stack-parser": "^2.1.4",
         "js-base64": "^3.7.7",
         "localforage": "^1.10.0",
         "prettier": "3.4.2",

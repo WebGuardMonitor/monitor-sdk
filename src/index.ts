@@ -4,6 +4,7 @@ import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
 import {
     DomMonitor,
+    JsErrorMonitor,
     PageViewMonitor,
     PerformanceMonitor,
     PromiseErrorMonitor,
@@ -45,7 +46,6 @@ class TraceSDK {
      */
     private init() {
         this.event.init();
-        console.log(Config.getAll())
     }
 
     /**
@@ -76,6 +76,9 @@ class TraceSDK {
         }
 
         // Js Error 错误上报
+        if (Config.get('isJsError')) {
+            event.register(new JsErrorMonitor())
+        }
 
         // Promise 错误上报
         if (Config.get('isPromiseError')) {

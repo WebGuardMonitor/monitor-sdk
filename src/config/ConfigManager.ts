@@ -30,7 +30,13 @@ export class ConfigManager {
             // 是否开启屏幕录制
             isRecord: false,
             // 是否上报数据资源
-            isResource: false
+            isResource: false,
+            // 是否 XHR
+            isXhr: false,
+            // 是否 fetch
+            isFetch: false,
+            // 是否 js error
+            isJsError: false
         };
 
         if (!options.report || !options.appId) {

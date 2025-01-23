@@ -10,3 +10,4 @@ export * from './generatePassword';
 export * from './build-query';
 export * from './localstorage';
 export * from './default';
+export * from './trace.id';
