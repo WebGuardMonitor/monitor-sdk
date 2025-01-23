@@ -10,7 +10,8 @@ import {
     PromiseErrorMonitor,
     ResourceTimingMonitor,
     UniqueVisitorMonitor,
-    WebVitalsMonitor
+    WebVitalsMonitor,
+    XhrMonitor
 } from "./monitor";
 import {Sender} from "./common/sender";
 import {version} from "./version";
@@ -86,6 +87,9 @@ class TraceSDK {
         }
 
         // 异常请求错误上报 xhr、fetch、
+        if (Config.get('isXhr')) {
+            event.register(new XhrMonitor())
+        }
 
         // 资源数据上报
         if (Config.get('isResource')) {

@@ -1,6 +1,8 @@
 import {
     BATCH_TYPE,
     CLICK_EV_TYPE,
+    FETCH_ERROR_TYPE,
+    HTTP_TYPE,
     JS_ERROR_TYPE,
     PERFORMANCE_TIMING_EV_TYPE,
     PROMISE_TYPE,
@@ -31,3 +33,5 @@ export type EventType =
     | typeof RESOURCE_TYPE
     | typeof JS_ERROR_TYPE
     | typeof RESOURCE_ERROR_TYPE
+    | typeof HTTP_TYPE
+    | typeof FETCH_ERROR_TYPE
