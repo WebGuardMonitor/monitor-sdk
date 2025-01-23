@@ -67,22 +67,26 @@ export class FetchMonitor implements MonitorImplements {
                     WINDOW.Sender.push(constructReportData(HTTP_TYPE, data))
 
                 } else {
-                    // TODO 错误内容，目前无法模拟出来，所以暂不支持数据上报
-                }
 
-                // if (!response.ok) {
-                //     console.log('fetch 响应异常', {
-                //         ev_type: 'fetch_response',
-                //         payload: {
-                //             url,
-                //             method,
-                //             status: response.status,
-                //             statusText: response.statusText,
-                //             errorMessage: `HTTP error: ${response.status}`,
-                //             timestamp: new Date().toISOString(),
-                //         }
-                //     })
-                // }
+                    const data = {
+                        api: 'fetch',
+                        request: {
+                            method: request.method,
+                            url: request.url,
+                            timestamp: timestamp,
+                            headers: request.headers
+                        },
+                        response: {
+                            status: response.status,
+                            headers: responseHeader,
+                            timestamp: Date.now(),
+                            timing: performanceTiming
+                        },
+                        duration: performanceTiming?.duration.toFixed(2)
+                    }
+
+                    bindReporter(constructReportData(FETCH_ERROR_TYPE, data))
+                }
 
                 return response;
 
