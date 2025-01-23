@@ -4,6 +4,7 @@ import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
 import {
     DomMonitor,
+    FetchMonitor,
     JsErrorMonitor,
     PageViewMonitor,
     PerformanceMonitor,
@@ -86,9 +87,14 @@ class TraceSDK {
             event.register(new PromiseErrorMonitor())
         }
 
-        // 异常请求错误上报 xhr、fetch、
+        // XHR 数据上报
         if (Config.get('isXhr')) {
             event.register(new XhrMonitor())
+        }
+
+        // fetch 数据上报
+        if (Config.get('isFetch')) {
+            event.register(new FetchMonitor())
         }
 
         // 资源数据上报
