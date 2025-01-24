@@ -116,6 +116,15 @@ class TraceSDK {
     }
 }
 
-(globalThis as any).DataBase = new Database();
-(globalThis as any).Sender = new Sender();
-(globalThis as any).TraceSDK = TraceSDK;
+export {
+    Database,
+    Sender,
+    TraceSDK
+}
+
+// 挂载到全局对象
+if (typeof window !== 'undefined') {
+    (globalThis as any).DataBase = new Database();
+    (globalThis as any).Sender = new Sender();
+    (globalThis as any).TraceSDK = TraceSDK;
+}
