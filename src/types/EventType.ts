@@ -9,11 +9,13 @@ import {
     RESOURCE_ERROR_TYPE,
     RESOURCE_TYPE,
     VITALS_CLS,
+    VITALS_DCL,
     VITALS_FCP,
     VITALS_FID,
     VITALS_FP,
     VITALS_INP,
     VITALS_LCP,
+    VITALS_LOAD,
     VITALS_TTFB
 } from "../common";
 
@@ -35,3 +37,5 @@ export type EventType =
     | typeof RESOURCE_ERROR_TYPE
     | typeof HTTP_TYPE
     | typeof FETCH_ERROR_TYPE
+    | typeof VITALS_LOAD
+    | typeof VITALS_DCL
