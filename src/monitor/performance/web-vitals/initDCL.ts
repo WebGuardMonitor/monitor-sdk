@@ -3,6 +3,7 @@ import {whenLoad} from "../../../helper/whenLoad";
 import {WINDOW} from "../../../types";
 import {constructReportData} from "../../../helper/BasicData";
 import {VITALS_DCL} from "../../../common";
+import {getDefaultPerformance} from "../../../utils";
 
 
 // https://juejin.cn/post/7394790673613029388
@@ -15,13 +16,15 @@ export const initDCL = () => {
     whenLoad(() => {
         let value: number;
         let entries;
-        if (performance.getEntriesByType('navigation').length >= 1) {
-            const newPerformanceTiming = getNavigationEntry()
+
+        const newPerformanceTiming = getNavigationEntry()
+
+        if (newPerformanceTiming) {
             entries = newPerformanceTiming as PerformancePaintTiming;
             value = newPerformanceTiming.domContentLoadedEventEnd - newPerformanceTiming.startTime
         } else {
-            const oldPerformanceTiming = window.performance.timing;
-            entries = oldPerformanceTiming as PerformanceTiming;
+            const oldPerformanceTiming = getDefaultPerformance()?.timing as PerformanceTiming;
+            entries = oldPerformanceTiming;
             value = oldPerformanceTiming.domContentLoadedEventEnd - oldPerformanceTiming.navigationStart;
         }
 

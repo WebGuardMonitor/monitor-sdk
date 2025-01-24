@@ -1,8 +1,9 @@
-import {getNavigationEntry} from "../../../helper/getNavigationEntry";
 import {whenLoad} from "../../../helper/whenLoad";
+import {getNavigationEntry} from "../../../helper/getNavigationEntry";
 import {WINDOW} from "../../../types";
-import {constructReportData} from "../../../helper/BasicData";
 import {VITALS_LOAD} from "../../../common";
+import {constructReportData} from "../../../helper/BasicData";
+import {getDefaultPerformance} from "../../../utils";
 
 // https://juejin.cn/post/7218513153402224695#heading-5
 
@@ -11,23 +12,32 @@ import {VITALS_LOAD} from "../../../common";
  */
 export const initLoad = () => {
     whenLoad(() => {
-        let value: number;
-        let entries;
-        if (performance.getEntriesByType('navigation').length >= 1) {
-            const newPerformanceTiming = getNavigationEntry()
-            entries = newPerformanceTiming as PerformancePaintTiming;
-            value = newPerformanceTiming.loadEventEnd - newPerformanceTiming.startTime
-        } else {
-            const oldPerformanceTiming = window.performance.timing;
-            entries = oldPerformanceTiming as PerformanceTiming;
-            value = oldPerformanceTiming.loadEventEnd - oldPerformanceTiming.navigationStart;
-        }
+        setTimeout(() => {
+            Promise.resolve()
+                .then(() => {
 
-        WINDOW.Sender.push(constructReportData(VITALS_LOAD, {
-            name: VITALS_LOAD,
-            metric: value,
-            entry: entries,
-        }))
+                    let value: number;
+                    let entries;
 
-    });
+                    const newPerf = getNavigationEntry() as PerformanceNavigationTiming;
+                    if (newPerf) {
+                        value = newPerf.loadEventEnd - newPerf.startTime;
+                        entries = newPerf;
+                    } else {
+                        const oldPerf = getDefaultPerformance()?.timing as PerformanceTiming;
+                        value = oldPerf.loadEventEnd - oldPerf.navigationStart;
+                        entries = oldPerf;
+                    }
+
+                    WINDOW.Sender.push(constructReportData(VITALS_LOAD, {
+                        name: VITALS_LOAD,
+                        metric: value,
+                        entry: entries,
+                    }))
+
+
+                })
+        }, 0)
+    })
+
 }
