@@ -28,7 +28,9 @@ export interface Options {
     // 是否 fetch
     isFetch: boolean,
     // 是否 js error
-    isJsError: boolean
+    isJsError: boolean,
+    // 是否耗时数据
+    isNavigationTiming: boolean
 }
 
 export interface DefaultOption {

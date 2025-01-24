@@ -36,7 +36,9 @@ export class ConfigManager {
             // 是否 fetch
             isFetch: false,
             // 是否 js error
-            isJsError: false
+            isJsError: false,
+            // 是否耗时数据
+            isNavigationTiming: false
         };
 
         if (!options.report || !options.appId) {

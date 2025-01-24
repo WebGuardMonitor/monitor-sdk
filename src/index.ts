@@ -6,6 +6,7 @@ import {
     DomMonitor,
     FetchMonitor,
     JsErrorMonitor,
+    NavigationTimingMonitor,
     PageViewMonitor,
     PerformanceMonitor,
     PromiseErrorMonitor,
@@ -100,6 +101,11 @@ class TraceSDK {
         // 资源数据上报
         if (Config.get('isResource')) {
             event.register(new ResourceTimingMonitor())
+        }
+
+        // 耗时数据上报
+        if(Config.get('isNavigationTiming')){
+            event.register(new NavigationTimingMonitor())
         }
 
         // 点击事件上报
