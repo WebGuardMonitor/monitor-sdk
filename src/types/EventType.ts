@@ -4,6 +4,7 @@ import {
     FETCH_ERROR_TYPE,
     HTTP_TYPE,
     JS_ERROR_TYPE,
+    NAVIGATION_TIMING_TYPE,
     PERFORMANCE_TIMING_EV_TYPE,
     PROMISE_TYPE,
     RESOURCE_ERROR_TYPE,
@@ -39,3 +40,4 @@ export type EventType =
     | typeof FETCH_ERROR_TYPE
     | typeof VITALS_LOAD
     | typeof VITALS_DCL
+    | typeof NAVIGATION_TIMING_TYPE
