@@ -14,7 +14,7 @@ export class NavigationTimingMonitor implements MonitorImplements {
         whenLoad(() => {
             setTimeout(() => {
                 Promise.resolve().then(() => {
-                    
+
                     let data;
 
                     if (!!performance.getEntriesByType('navigation')[0]) {
