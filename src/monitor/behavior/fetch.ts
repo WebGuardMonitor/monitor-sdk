@@ -108,6 +108,9 @@ export class FetchMonitor implements MonitorImplements {
                     // 错误信息
                     message: error?.message,
 
+                    // 资源时长
+                    timing: performance.getEntriesByName(request.url)[0] as PerformanceResourceTiming,
+
                     // 错误 ID
                     ...buildTraceId([
                         error?.message,
