@@ -24,13 +24,30 @@
             isResource: false,
             isJsError: false,
             isXhr: false,
-            isFetch: true
+            isFetch: false,
+            isNavigationTiming: true
         });
     </script>
 </head>
 <body>
 <p>这是一条内容</p>
 <button onClick="logEvent(event)">点击</button>
+
+<div class="controls">
+    <button id="reload" type="button">重新加载</button>
+</div>
+
+<div class="event-log">
+    <label for="eventLog">事件日志：</label>
+    <textarea
+            readonly
+            class="event-log-contents"
+            rows="8"
+            cols="30"
+            id="eventLog"></textarea>
+</div>
+
+
 <script>
     function logEvent(event) {
 
@@ -54,11 +71,11 @@
 </script>
 
 <!-- 资源加载演示 -->
-<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.g"
+<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.jpeg"
      alt="sss"/>
 
 
-<!--<iframe src="base.html" width="200" height="300"></iframe>-->
+<iframe src="base.html" width="200" height="300"></iframe>
 
 <!--<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>-->
 
@@ -93,22 +110,45 @@
 
     // fetch ！response.ok 异常
     // fetch('http://localhost:3000/')
-</script>
 
-<!--<script>-->
-<!--    (() => {-->
-<!--        const xhr = new XMLHttpRequest()-->
-<!--        xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')-->
-<!--        // xhr.open('get', 'https://invalid-url-example.com/api/data')-->
-<!--        // xhr.setRequestHeader('Content-Type', 'application/json');-->
-<!--        // xhr.setRequestHeader('s', 'vasdasdjson');-->
-<!--        xhr.onload = (e) => {-->
-<!--            console.log('这个是 xml http request 内容', e)-->
-<!--        }-->
-<!--        xhr.send()-->
-<!--        console.log(xhr)-->
-<!--    })()-->
-<!--</script>-->
+    // (() => {
+    //     const xhr = new XMLHttpRequest()
+    //     xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')
+    //     // xhr.open('get', 'https://invalid-url-example.com/api/data')
+    //     // xhr.setRequestHeader('Content-Type', 'application/json');
+    //     // xhr.setRequestHeader('s', 'vasdasdjson');
+    //     xhr.onload = (e) => {
+    //         console.log('这个是 xml http request 内容', e)
+    //     }
+    //     xhr.send()
+    //     console.log(xhr)
+    // })()
+
+    // 延迟 dom 加载
+    // const log = document.querySelector('.event-log-contents');
+    // const reload = document.querySelector('#reload');
+    //
+    // reload.addEventListener('click', () => {
+    //     log.textContent = '';
+    //     setTimeout(() => {
+    //         window.location.reload(true);
+    //     }, 200);
+    // });
+    //
+    // window.addEventListener('load', (event) => {
+    //     log.textContent += 'load\n';
+    // });
+    //
+    // document.addEventListener('readystatechange', (event) => {
+    //     log.textContent += `readystate: ${document.readyState}\n`;
+    // });
+    //
+    // document.addEventListener('DOMContentLoaded', (event) => {
+    //     log.textContent += 'DOMContentLoaded\n';
+    // });
+
+
+</script>
 
 
 </body>

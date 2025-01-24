@@ -9,6 +9,7 @@ import {
     PROMISE_TYPE,
     RESOURCE_ERROR_TYPE,
     RESOURCE_TYPE,
+    STAY_TIME_TYPE,
     VITALS_CLS,
     VITALS_DCL,
     VITALS_FCP,
@@ -41,3 +42,4 @@ export type EventType =
     | typeof VITALS_LOAD
     | typeof VITALS_DCL
     | typeof NAVIGATION_TIMING_TYPE
+    | typeof STAY_TIME_TYPE

@@ -3,6 +3,7 @@ import Config from './config/config';
 import {generateDeviceId} from './utils';
 import {EventComposite} from './helper/EventComposite';
 import {
+    Breadcrumb,
     DomMonitor,
     FetchMonitor,
     JsErrorMonitor,
@@ -11,6 +12,7 @@ import {
     PerformanceMonitor,
     PromiseErrorMonitor,
     ResourceTimingMonitor,
+    StayTime,
     UniqueVisitorMonitor,
     WebVitalsMonitor,
     XhrMonitor
@@ -58,6 +60,8 @@ class TraceSDK {
     private registerEvent(): EventComposite {
         const event = new EventComposite();
 
+        event.register(new Breadcrumb())
+
         // PV 上报
         if (Config.get('isPageView')) {
             event.register(new PageViewMonitor());
@@ -104,7 +108,7 @@ class TraceSDK {
         }
 
         // 耗时数据上报
-        if(Config.get('isNavigationTiming')){
+        if (Config.get('isNavigationTiming')) {
             event.register(new NavigationTimingMonitor())
         }
 
@@ -112,10 +116,9 @@ class TraceSDK {
         if (Config.get('isClickEvent')) {
             event.register(new DomMonitor())
         }
-        // 滚动事件
+
         // 页面停留数据上报
-        // 页面跳转
-        //
+        event.register(new StayTime())
 
 
         return event;
