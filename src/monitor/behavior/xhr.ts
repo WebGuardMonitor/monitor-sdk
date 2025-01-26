@@ -18,6 +18,7 @@ export class XhrMonitor implements MonitorImplements {
 
             // 保存原始的 open 和 send 方法
             const originalOpen = xhr.open;
+            const originalHeader = xhr.setRequestHeader;
             const originalSend = xhr.send;
 
             const request: XhrRequest = {
@@ -49,6 +50,7 @@ export class XhrMonitor implements MonitorImplements {
 
             xhr.setRequestHeader = function (header: string, value: string) {
                 request.header[header] = value;
+                originalHeader.apply(xhr, arguments as any);
             };
 
             // 重写 send 方法
