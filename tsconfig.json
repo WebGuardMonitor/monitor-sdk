@@ -1,5 +1,14 @@
 {
     "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "./*"
+            ],
+            "@types/*": [
+                "./types/*"
+            ]
+        },
         // 严格模式
         "strict": true,
         // 编译成什么版本
@@ -9,33 +18,36 @@
         // 是否自动创建类型声明文件
         "declaration": true,
         "declarationDir": "./dist/types/",
+        "declarationMap": true,
         "sourceMap": true,
         // 引入package.json不会报红
         "moduleResolution": "node",
         // 以严格模式解析并为每个源文件生成 "use strict"语句
         "alwaysStrict": false,
-        "declarationMap": true,
         "downlevelIteration": true,
         "importHelpers": true,
         "inlineSources": true,
         "isolatedModules": true,
-        //        "lib": [
-        //            "ES2018",
-        //        ],
+        "lib": [
+            "ES2018",
+            "DOM",
+            "DOM.Iterable"
+        ],
         "noErrorTruncation": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noUnusedLocals": false,
         "noUnusedParameters": false,
         "preserveWatchOutput": true,
-        //        "sourceMap": true,
-        //        "strict": true,
         "strictBindCallApply": false,
-        //        "target": "es2018",
         "noUncheckedIndexedAccess": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ]
     },
     "include": [
-        "src/**/*"
+        "src/**/*.ts"
     ]
 }
