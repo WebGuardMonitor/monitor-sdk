@@ -41,13 +41,10 @@
         "preserveWatchOutput": true,
         "strictBindCallApply": false,
         "noUncheckedIndexedAccess": true,
-        "esModuleInterop": true,
-        "typeRoots": [
-            "./node_modules/@types",
-            "./types"
-        ]
+        "esModuleInterop": true
     },
     "include": [
+        "types/**/*.d.ts",
         "src/**/*.ts"
     ]
 }
