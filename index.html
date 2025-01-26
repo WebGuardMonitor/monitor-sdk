@@ -12,7 +12,7 @@
         //     // userId: 'test'
         // })
         const sdk = new TraceSDK({
-            report: 'http://localhost:3000/monitor',
+            report: 'http://192.168.191.225:3000/monitor',
             appId: 'test',
             // userId: 'test'
             isPageView: false,
@@ -94,9 +94,9 @@
     //     .then(res => console.log(res))
 
     // fetch 成功例子
-    // fetch('https://api.feelgood.cn/athena/survey/platform/task/show/', {
-    //     method: 'post',
-    // })
+    fetch('https://api.feelgood.cn/athena/survey/platform/task/show/', {
+        method: 'post',
+    })
 
     // fetch 抛出 error 异常
     // fetch('https://www.volcengine.com/api/search/hotWord?Pos=searchBar', {
@@ -109,7 +109,7 @@
     //     .catch(err => console.error('Error reporting failed:', err));
 
     // fetch ！response.ok 异常
-    // fetch('http://localhost:3000/')
+    fetch('http://localhost:3000/')
 
     // (() => {
     //     const xhr = new XMLHttpRequest()

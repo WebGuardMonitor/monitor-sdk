@@ -7,12 +7,7 @@
     <list default="true" id="875f02e6-1b1f-4922-aa39-1a68b85e12c0" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/constant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constant.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/BasicData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/BasicData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/EventType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/EventType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/sendData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/sendData.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +17,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="TypeScript File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -55,7 +54,7 @@
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.format.executor&quot;: &quot;Run&quot;,
     &quot;npm.preview.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/tangchenghui/MyApp/PrivateProject/WebGuardMonitor/monitor-sdk/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -140,7 +139,10 @@
       <workItem from="1735881458440" duration="7894000" />
       <workItem from="1736425285836" duration="6000" />
       <workItem from="1736688405301" duration="4362000" />
-      <workItem from="1737466318817" duration="7674000" />
+      <workItem from="1737466318817" duration="38989000" />
+      <workItem from="1737594984507" duration="111000" />
+      <workItem from="1737595103661" duration="56950000" />
+      <workItem from="1737776996543" duration="21363000" />
     </task>
     <servers />
   </component>

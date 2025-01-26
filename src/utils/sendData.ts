@@ -6,6 +6,7 @@ const _request = (method: MethodType, url: string, data: Document | XMLHttpReque
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.setRequestHeader('sda', 'asdasd');
     xhr.send(data);
 }
 
@@ -31,10 +32,10 @@ const createBrowserSender = {
      * 使用 sendBeacon 发送数据
      * @param option
      */
-    sendBeacon(option: MethodOptions) {
+    async sendBeacon(option: MethodOptions) {
         console.log('sendBeacon', JSON.stringify(option.data))
         // WINDOW.navigator.sendBeacon(option.url, JSON.stringify(option.data));
-        fetch(option.url, {
+        await fetch(option.url, {
             method: METHOD_POST,
             headers: {
                 'Content-Type': 'application/json',
