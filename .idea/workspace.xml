@@ -5,87 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="875f02e6-1b1f-4922-aa39-1a68b85e12c0" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/constant.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/database.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/sender.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/ConfigManager.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/BasicData.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/BasicUrl.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/EventComposite.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/bindReporter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/createReporter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/getActivationStart.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/getNavigationEntry.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/getVisibilityWatcher.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/observe.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/onHidden.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/rrweb.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/runPerformanceObserver.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/whenActivated.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/whenDomContentLoaded.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/whenLoad.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/whenReady.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helper/whenVisible.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/breadcrumb.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/dom.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/fetch.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/page-view.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/stay.time.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/unique-visitor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/behavior/xhr.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/exception/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/exception/js.error.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/exception/promise.error.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/navigation.timing.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/performance.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/resource.timing.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initCLS.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initDCL.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initFCP.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initFID.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initFP.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initINP.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initLCP.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initLoad.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monitor/performance/web-vitals/initTTFB.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/EventType.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/Monitor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/global.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/method.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/option.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/xhr.request.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/build-query.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/default/default-browser.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/default/default-performance.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/default/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/device.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/generatePassword.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/is.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/localstorage.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/md5.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/pageId.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sendData.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/sessionId.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/trace.id.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/userId.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/bytesToUuid.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/uuid/rng-browser.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/version.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/version.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsup.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tsup.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -133,7 +55,7 @@
     "npm.format.executor": "Run",
     "npm.preview.executor": "Run",
     "settings.editor.selected.configurable": "plugins.gitcommitmessagehelper.template",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/Users/tangchenghui/MyApp/PrivateProject/WebGuardMonitor/monitor-sdk/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -220,7 +142,7 @@
       <workItem from="1737466318817" duration="38989000" />
       <workItem from="1737594984507" duration="111000" />
       <workItem from="1737595103661" duration="56950000" />
-      <workItem from="1737776996543" duration="22165000" />
+      <workItem from="1737776996543" duration="35349000" />
     </task>
     <servers />
   </component>
