@@ -1,7 +1,7 @@
-import {createReporter} from "./createReporter";
-import {createBrowserSender} from "../utils";
-import {getReportUrl} from "./BasicUrl";
-import {buildBasicData} from "./BasicData";
+import { createReporter } from './createReporter';
+import { createBrowserSender } from '../utils';
+import { getReportUrl } from './BasicUrl';
+import { buildBasicData } from './BasicData';
 
 /**
  * 建立 Report 数据
@@ -13,8 +13,8 @@ export const bindReporter = (data: Object) => {
             url: getReportUrl(),
             data: {
                 ...data,
-                basic: {...buildBasicData()}
-            }
-        })
-    })
-}
+                basic: { ...buildBasicData() },
+            },
+        });
+    });
+};

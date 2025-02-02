@@ -1,6 +1,5 @@
-import {METHOD_GET, METHOD_POST, MethodOptions, MethodType} from '../types';
-import {joinQueryWithMap} from './index';
-
+import { METHOD_GET, METHOD_POST, MethodOptions, MethodType } from '../types';
+import { joinQueryWithMap } from './index';
 
 const _request = (method: MethodType, url: string, data: Document | XMLHttpRequestBodyInit | null) => {
     const xhr = new XMLHttpRequest();
@@ -8,7 +7,7 @@ const _request = (method: MethodType, url: string, data: Document | XMLHttpReque
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xhr.setRequestHeader('sda', 'asdasd');
     xhr.send(data);
-}
+};
 
 /**
  * 创建发送器
@@ -33,7 +32,7 @@ const createBrowserSender = {
      * @param option
      */
     async sendBeacon(option: MethodOptions) {
-        console.log('sendBeacon', JSON.stringify(option.data))
+        console.log('sendBeacon', JSON.stringify(option.data));
         // WINDOW.navigator.sendBeacon(option.url, JSON.stringify(option.data));
         await fetch(option.url, {
             method: METHOD_POST,
@@ -41,8 +40,8 @@ const createBrowserSender = {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(option.data),
-        })
+        });
     },
 };
 
-export {createBrowserSender};
+export { createBrowserSender };

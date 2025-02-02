@@ -1,2 +1,2 @@
 export * from './default-browser';
-export * from './default-performance'
+export * from './default-performance';

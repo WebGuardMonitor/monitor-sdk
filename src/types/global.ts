@@ -1,6 +1,6 @@
-import {Options} from './option';
-import {Sender} from "../common/sender";
-import type {Database} from "../common";
+import { Options } from './option';
+import { Sender } from '../common/sender';
+import type { Database } from '../common';
 
 export type InternalGlobal = {
     option: Options;

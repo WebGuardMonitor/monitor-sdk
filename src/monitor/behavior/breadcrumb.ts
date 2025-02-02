@@ -1,4 +1,4 @@
-import {MonitorImplements} from "../../types";
+import { MonitorImplements } from '../../types';
 
 export class Breadcrumb implements MonitorImplements {
     constructor() {
@@ -37,7 +37,7 @@ export class Breadcrumb implements MonitorImplements {
         //     // });
         // });
         window.addEventListener('click', (event) => {
-            console.log('click', event)
+            console.log('click', event);
         });
     }
 }

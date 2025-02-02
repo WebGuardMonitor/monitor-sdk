@@ -1,155 +1,143 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
-    <link rel="stylesheet" href="index.css"/>
-    <script src="http://localhost:1024/index.global.js" crossorigin="anonymous"></script>
-    <script>
-        // TraceSdk.init({
-        //     report: 'http://localhost:1024/report',
-        //     appId: 'test',
-        //     // userId: 'test'
-        // })
-        const sdk = new TraceSDK({
-            report: 'http://192.168.191.225:3000/monitor',
-            appId: 'test',
-            // userId: 'test'
-            isPageView: false,
-            isUniqueVisitor: false,
-            isPerformance: false,
-            isWebVitals: false,
-            isPromiseError: false,
-            isClickEvent: false,
-            isResource: false,
-            isJsError: false,
-            isXhr: false,
-            isFetch: false,
-            isNavigationTiming: true
-        });
-    </script>
-</head>
-<body>
-<p>这是一条内容</p>
-<button onClick="logEvent(event)">点击</button>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="index.css" />
+        <script src="http://localhost:1024/index.global.js" crossorigin="anonymous"></script>
+        <script>
+            // TraceSdk.init({
+            //     report: 'http://localhost:1024/report',
+            //     appId: 'test',
+            //     // userId: 'test'
+            // })
+            const sdk = new TraceSDK({
+                report: 'http://192.168.191.225:3000/monitor',
+                appId: 'test',
+                // userId: 'test'
+                isPageView: false,
+                isUniqueVisitor: false,
+                isPerformance: false,
+                isWebVitals: false,
+                isPromiseError: false,
+                isClickEvent: false,
+                isResource: false,
+                isJsError: false,
+                isXhr: false,
+                isFetch: false,
+                isNavigationTiming: true,
+            });
+        </script>
+    </head>
+    <body>
+        <p>这是一条内容</p>
+        <button onClick="logEvent(event)">点击</button>
 
-<div class="controls">
-    <button id="reload" type="button">重新加载</button>
-</div>
+        <div class="controls">
+            <button id="reload" type="button">重新加载</button>
+        </div>
 
-<div class="event-log">
-    <label for="eventLog">事件日志：</label>
-    <textarea
-            readonly
-            class="event-log-contents"
-            rows="8"
-            cols="30"
-            id="eventLog"></textarea>
-</div>
+        <div class="event-log">
+            <label for="eventLog">事件日志：</label>
+            <textarea readonly class="event-log-contents" rows="8" cols="30" id="eventLog"></textarea>
+        </div>
 
+        <script>
+            function logEvent(event) {
+                // RangeError - 有效范围错误
+                let b = new Array(-1);
 
-<script>
-    function logEvent(event) {
+                // ReferenceError - 引用错误
+                // log(event)
 
+                // SyntaxError - SyntaxError
+                // console.log(event
 
-        // RangeError - 有效范围错误
-        let b = new Array(-1)
+                // TypeError - 类型错误
+                // let foo = 3;foo();
 
-        // ReferenceError - 引用错误
-        // log(event)
+                // URIError
+                // decodeURIComponent('%');
+            }
+        </script>
 
-        // SyntaxError - SyntaxError
-        // console.log(event
+        <!-- 资源加载演示 -->
+        <img
+            src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.jpeg"
+            alt="sss"
+        />
 
-        // TypeError - 类型错误
-        // let foo = 3;foo();
+        <iframe src="base.html" width="200" height="300"></iframe>
 
-        // URIError
-        // decodeURIComponent('%');
+        <!--<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>-->
 
-    }
-</script>
+        <!--<video controls width="250">-->
+        <!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>-->
 
-<!-- 资源加载演示 -->
-<img src="https://p3-pc.douyinpic.com/aweme/200x200/aweme-avatar/tos-cn-i-0813_o4RHbAnkMEEA4e9SlCTFnADAgIekCLrQAARgD4.jpeg"
-     alt="sss"/>
+        <!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>-->
+        <!--</video>-->
 
+        <script>
+            // fetch('https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js?xsa=dsad&dd=casd', {
+            //     headers: {
+            //         origin: 'alicdn.com'
+            //     }
+            // })
+            //     .then(res => console.log(res))
 
-<iframe src="base.html" width="200" height="300"></iframe>
+            // fetch 成功例子
+            fetch('https://api.feelgood.cn/athena/survey/platform/task/show/', {
+                method: 'post',
+            });
 
-<!--<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>-->
+            // fetch 抛出 error 异常
+            // fetch('https://www.volcengine.com/api/search/hotWord?Pos=searchBar', {
+            //     method: 'post',
+            // })
 
-<!--<video controls width="250">-->
-<!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"/>-->
+            // fetch('https://console.volcengine.com/api/passport/account/currentUser')
+            //     .then(res => res.json())
+            //     .then(res => console.log(res))
+            //     .catch(err => console.error('Error reporting failed:', err));
 
-<!--    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4"/>-->
-<!--</video>-->
+            // fetch ！response.ok 异常
+            fetch('http://localhost:3000/');
 
-<script>
-    // fetch('https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js?xsa=dsad&dd=casd', {
-    //     headers: {
-    //         origin: 'alicdn.com'
-    //     }
-    // })
-    //     .then(res => console.log(res))
+            // (() => {
+            //     const xhr = new XMLHttpRequest()
+            //     xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')
+            //     // xhr.open('get', 'https://invalid-url-example.com/api/data')
+            //     // xhr.setRequestHeader('Content-Type', 'application/json');
+            //     // xhr.setRequestHeader('s', 'vasdasdjson');
+            //     xhr.onload = (e) => {
+            //         console.log('这个是 xml http request 内容', e)
+            //     }
+            //     xhr.send()
+            //     console.log(xhr)
+            // })()
 
-    // fetch 成功例子
-    fetch('https://api.feelgood.cn/athena/survey/platform/task/show/', {
-        method: 'post',
-    })
-
-    // fetch 抛出 error 异常
-    // fetch('https://www.volcengine.com/api/search/hotWord?Pos=searchBar', {
-    //     method: 'post',
-    // })
-
-    // fetch('https://console.volcengine.com/api/passport/account/currentUser')
-    //     .then(res => res.json())
-    //     .then(res => console.log(res))
-    //     .catch(err => console.error('Error reporting failed:', err));
-
-    // fetch ！response.ok 异常
-    fetch('http://localhost:3000/')
-
-    // (() => {
-    //     const xhr = new XMLHttpRequest()
-    //     xhr.open('get', 'https://lf3-beecdn.bytetos.com/obj/ies-fe-bee/bee_prod/biz_610/bee_prod_610_bee_publish_11392.json?&_=1737554312631')
-    //     // xhr.open('get', 'https://invalid-url-example.com/api/data')
-    //     // xhr.setRequestHeader('Content-Type', 'application/json');
-    //     // xhr.setRequestHeader('s', 'vasdasdjson');
-    //     xhr.onload = (e) => {
-    //         console.log('这个是 xml http request 内容', e)
-    //     }
-    //     xhr.send()
-    //     console.log(xhr)
-    // })()
-
-    // 延迟 dom 加载
-    // const log = document.querySelector('.event-log-contents');
-    // const reload = document.querySelector('#reload');
-    //
-    // reload.addEventListener('click', () => {
-    //     log.textContent = '';
-    //     setTimeout(() => {
-    //         window.location.reload(true);
-    //     }, 200);
-    // });
-    //
-    // window.addEventListener('load', (event) => {
-    //     log.textContent += 'load\n';
-    // });
-    //
-    // document.addEventListener('readystatechange', (event) => {
-    //     log.textContent += `readystate: ${document.readyState}\n`;
-    // });
-    //
-    // document.addEventListener('DOMContentLoaded', (event) => {
-    //     log.textContent += 'DOMContentLoaded\n';
-    // });
-
-
-</script>
-
-
-</body>
+            // 延迟 dom 加载
+            // const log = document.querySelector('.event-log-contents');
+            // const reload = document.querySelector('#reload');
+            //
+            // reload.addEventListener('click', () => {
+            //     log.textContent = '';
+            //     setTimeout(() => {
+            //         window.location.reload(true);
+            //     }, 200);
+            // });
+            //
+            // window.addEventListener('load', (event) => {
+            //     log.textContent += 'load\n';
+            // });
+            //
+            // document.addEventListener('readystatechange', (event) => {
+            //     log.textContent += `readystate: ${document.readyState}\n`;
+            // });
+            //
+            // document.addEventListener('DOMContentLoaded', (event) => {
+            //     log.textContent += 'DOMContentLoaded\n';
+            // });
+        </script>
+    </body>
 </html>

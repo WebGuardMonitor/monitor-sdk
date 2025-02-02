@@ -1,4 +1,4 @@
-import localforage from "localforage";
+import localforage from 'localforage';
 
 // 定义数据库配置类型
 interface DatabaseConfig {
@@ -21,7 +21,7 @@ export class Database {
 
     constructor(config: Partial<DatabaseConfig> = {}) {
         // 合并默认配置和用户配置
-        const finalConfig = {...DEFAULT_CONFIG, ...config};
+        const finalConfig = { ...DEFAULT_CONFIG, ...config };
 
         // 初始化 localforage
         this.store = localforage.createInstance({
@@ -42,5 +42,4 @@ export class Database {
         await this.store.setItem(key, value);
         console.log(`Data saved successfully with key: ${key}`);
     }
-
 }

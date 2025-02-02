@@ -1,5 +1,5 @@
-import {whenActivated} from "./whenActivated";
-import {COMPLETE} from "../common";
+import { whenActivated } from './whenActivated';
+import { COMPLETE } from '../common';
 
 /**
  * 确保页面准备好后执行回调函数。
@@ -21,4 +21,4 @@ export const whenReady = (callback: () => void) => {
         // Queue a task so the callback runs after `loadEventEnd`.
         setTimeout(callback, 0);
     }
-}
+};

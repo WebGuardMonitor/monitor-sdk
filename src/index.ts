@@ -1,7 +1,7 @@
-import {ConfigOptionType, Options} from './types';
+import { ConfigOptionType, Options } from './types';
 import Config from './config/config';
-import {generateDeviceId} from './utils';
-import {EventComposite} from './helper/EventComposite';
+import { generateDeviceId } from './utils';
+import { EventComposite } from './helper/EventComposite';
 import {
     Breadcrumb,
     DomMonitor,
@@ -15,12 +15,12 @@ import {
     StayTime,
     UniqueVisitorMonitor,
     WebVitalsMonitor,
-    XhrMonitor
-} from "./monitor";
-import {Sender} from "./common/sender";
-import {version} from "./version";
-import {Rrweb} from "./helper/rrweb";
-import {Database} from "./common";
+    XhrMonitor,
+} from './monitor';
+import { Sender } from './common/sender';
+import { version } from './version';
+import { Rrweb } from './helper/rrweb';
+import { Database } from './common';
 
 class TraceSDK {
     public readonly version: string = version;
@@ -60,31 +60,31 @@ class TraceSDK {
     private registerEvent(): EventComposite {
         const event = new EventComposite();
 
-        event.register(new Breadcrumb())
+        event.register(new Breadcrumb());
 
         const plugins = [
-            {key: 'breadcrumb', monitor: Breadcrumb},
-            {key: 'isPageView', monitor: PageViewMonitor},
-            {key: 'isUniqueVisitor', monitor: UniqueVisitorMonitor},
-            {key: 'isPerformance', monitor: PerformanceMonitor},
-            {key: 'isWebVitals', monitor: WebVitalsMonitor},
-            {key: 'isJsError', monitor: JsErrorMonitor},
-            {key: 'isPromiseError', monitor: PromiseErrorMonitor},
-            {key: 'isXhr', monitor: XhrMonitor},
-            {key: 'isFetch', monitor: FetchMonitor},
-            {key: 'isResource', monitor: ResourceTimingMonitor},
-            {key: 'isNavigationTiming', monitor: NavigationTimingMonitor},
-            {key: 'isClickEvent', monitor: DomMonitor},
-            {key: 'stay_time', monitor: StayTime}
-        ]
+            { key: 'breadcrumb', monitor: Breadcrumb },
+            { key: 'isPageView', monitor: PageViewMonitor },
+            { key: 'isUniqueVisitor', monitor: UniqueVisitorMonitor },
+            { key: 'isPerformance', monitor: PerformanceMonitor },
+            { key: 'isWebVitals', monitor: WebVitalsMonitor },
+            { key: 'isJsError', monitor: JsErrorMonitor },
+            { key: 'isPromiseError', monitor: PromiseErrorMonitor },
+            { key: 'isXhr', monitor: XhrMonitor },
+            { key: 'isFetch', monitor: FetchMonitor },
+            { key: 'isResource', monitor: ResourceTimingMonitor },
+            { key: 'isNavigationTiming', monitor: NavigationTimingMonitor },
+            { key: 'isClickEvent', monitor: DomMonitor },
+            { key: 'stay_time', monitor: StayTime },
+        ];
 
-        const config = Config.getAll() as ConfigOptionType
+        const config = Config.getAll() as ConfigOptionType;
         plugins.forEach((item) => {
             // @ts-ignore
             // if (config[item['key']]) {
-            event.register(new item['monitor']())
+            event.register(new item['monitor']());
             // }
-        })
+        });
         // // PV 上报
         // if (Config.get('isPageView')) {
         //     event.register(new PageViewMonitor());
@@ -143,16 +143,11 @@ class TraceSDK {
         // 页面停留数据上报
         // event.register(new StayTime())
 
-
         return event;
     }
 }
 
-export {
-    Database,
-    Sender,
-    TraceSDK
-}
+export { Database, Sender, TraceSDK };
 
 // 挂载到全局对象
 if (typeof window !== 'undefined') {

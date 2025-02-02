@@ -1,6 +1,6 @@
-import {bindReporter} from "../helper/bindReporter";
-import {constructReportData} from "../helper/BasicData";
-import {BATCH_TYPE} from "./constant";
+import { bindReporter } from '../helper/bindReporter';
+import { constructReportData } from '../helper/BasicData';
+import { BATCH_TYPE } from './constant';
 
 export class Sender {
     // 数据存储
@@ -10,7 +10,7 @@ export class Sender {
     private readonly MAX_DATA = 8;
 
     constructor() {
-        this.data = []
+        this.data = [];
     }
 
     /**
@@ -18,14 +18,13 @@ export class Sender {
      * @param data
      */
     push(data: any) {
-        console.log('上报的数据来咯',data)
-        this.data.push(data)
+        console.log('上报的数据来咯', data);
+        this.data.push(data);
 
         if (this.data.length >= this.MAX_DATA) {
             this.report();
         }
     }
-
 
     /**
      * 获取上报数据
@@ -38,11 +37,11 @@ export class Sender {
      * 数据上报
      */
     public report() {
-        if (this.data.length === 0) return
+        if (this.data.length === 0) return;
 
-        const reportData = [...this.data]
-        this.data = []
+        const reportData = [...this.data];
+        this.data = [];
 
-        bindReporter(constructReportData(BATCH_TYPE, reportData))
+        bindReporter(constructReportData(BATCH_TYPE, reportData));
     }
 }

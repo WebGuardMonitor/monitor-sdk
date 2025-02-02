@@ -1,7 +1,7 @@
-import {VITALS_FID} from "../../../common";
-import {onFID} from "web-vitals";
-import {WINDOW} from "../../../types";
-import {constructReportData} from "../../../helper/BasicData";
+import { VITALS_FID } from '../../../common';
+import { onFID } from 'web-vitals';
+import { WINDOW } from '../../../types';
+import { constructReportData } from '../../../helper/BasicData';
 
 export const initFID = () => {
     // whenActivated(() => {
@@ -33,11 +33,13 @@ export const initFID = () => {
     // })
 
     onFID((metric) => {
-        WINDOW.Sender.push(constructReportData(VITALS_FID, {
-            name: VITALS_FID,
-            metric: metric.value,
-            entry: metric.entries,
-            vitals: metric
-        }))
-    })
-}
+        WINDOW.Sender.push(
+            constructReportData(VITALS_FID, {
+                name: VITALS_FID,
+                metric: metric.value,
+                entry: metric.entries,
+                vitals: metric,
+            }),
+        );
+    });
+};

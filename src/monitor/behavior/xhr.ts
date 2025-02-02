@@ -1,13 +1,12 @@
-import {MonitorImplements, WINDOW, XhrRequest} from "../../types";
-import {constructReportData} from "../../helper/BasicData";
-import {HTTP_TYPE} from "../../common";
+import { MonitorImplements, WINDOW, XhrRequest } from '../../types';
+import { constructReportData } from '../../helper/BasicData';
+import { HTTP_TYPE } from '../../common';
 
 /**
  * xhr 监控
  */
 export class XhrMonitor implements MonitorImplements {
     initialize() {
-
         // 保存原始的 XMLHttpRequest 构造函数
         const OriginalXMLHttpRequest = window.XMLHttpRequest;
 
@@ -26,8 +25,8 @@ export class XhrMonitor implements MonitorImplements {
                 url: '',
                 header: {},
                 startTime: 0,
-                duration: 0
-            }
+                duration: 0,
+            };
 
             // 重写 open 方法
 
@@ -36,7 +35,7 @@ export class XhrMonitor implements MonitorImplements {
                 url: string | URL,
                 async: boolean = true,
                 username?: string | null,
-                password?: string | null
+                password?: string | null,
             ): void {
                 request.method = method;
                 request.url = url;
@@ -61,12 +60,12 @@ export class XhrMonitor implements MonitorImplements {
 
             // 监听 loadend 事件
             xhr.addEventListener('loadend', async () => {
-
                 const timestamp = Date.now();
 
-                const responseHeader = xhr.getAllResponseHeaders()
+                const responseHeader = xhr
+                    .getAllResponseHeaders()
                     .split('\r\n')
-                    .filter(item => item !== "" && item != null)
+                    .filter((item) => item !== '' && item != null)
                     .reduce((acc, item) => {
                         const [key, value] = item.split(': ');
                         // @ts-ignore
@@ -74,22 +73,19 @@ export class XhrMonitor implements MonitorImplements {
                         return acc;
                     }, {});
 
-
                 // const timing = performance.getEntriesByName(request.url.toString())?.[0] as PerformanceResourceTiming;
 
                 const performanceTiming = await new Promise<PerformanceResourceTiming>((resolve) => {
-
-                    const observer = new PerformanceObserver(list => {
+                    const observer = new PerformanceObserver((list) => {
                         const entries = list.getEntriesByName(request.url.toString());
                         if (entries.length > 0) {
                             resolve(entries[0] as PerformanceResourceTiming);
                             observer.disconnect();
                         }
-                    })
+                    });
 
-                    observer.observe({type: 'resource', buffered: true});
-                })
-
+                    observer.observe({ type: 'resource', buffered: true });
+                });
 
                 const data = {
                     api: 'xhr',
@@ -97,21 +93,19 @@ export class XhrMonitor implements MonitorImplements {
                         url: request.url,
                         method: request.method,
                         headers: request.header,
-                        timestamp: request.startTime
+                        timestamp: request.startTime,
                     },
                     response: {
                         status: xhr.status,
                         timing: performanceTiming,
                         timestamp: timestamp,
-                        headers: responseHeader
+                        headers: responseHeader,
                     },
-                    duration: performanceTiming?.duration.toFixed(2) || timestamp - request.startTime
-                }
+                    duration: performanceTiming?.duration.toFixed(2) || timestamp - request.startTime,
+                };
 
-                WINDOW.Sender.push(constructReportData(HTTP_TYPE, data))
-
-            })
-
+                WINDOW.Sender.push(constructReportData(HTTP_TYPE, data));
+            });
 
             // 确保返回正确的实例
             return xhr;
@@ -122,6 +116,5 @@ export class XhrMonitor implements MonitorImplements {
 
         // 替换全局 XMLHttpRequest
         (window as any).XMLHttpRequest = CustomXMLHttpRequest as unknown as typeof XMLHttpRequest;
-
     }
 }

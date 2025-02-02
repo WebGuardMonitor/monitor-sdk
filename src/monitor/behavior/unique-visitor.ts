@@ -1,9 +1,9 @@
-import {MonitorImplements} from "../../types";
-import {createBrowserSender, getLocalStorage, uuid} from "../../utils";
-import {VISITOR_ID} from "../../common";
-import {buildBasicData} from "../../helper/BasicData";
-import {getUvUrl} from "../../helper/BasicUrl";
-import {createReporter} from "../../helper/createReporter";
+import { MonitorImplements } from '../../types';
+import { createBrowserSender, getLocalStorage, uuid } from '../../utils';
+import { VISITOR_ID } from '../../common';
+import { buildBasicData } from '../../helper/BasicData';
+import { getUvUrl } from '../../helper/BasicUrl';
+import { createReporter } from '../../helper/createReporter';
 
 export class UniqueVisitorMonitor implements MonitorImplements {
     initialize() {
@@ -19,9 +19,9 @@ export class UniqueVisitorMonitor implements MonitorImplements {
         createReporter(() => {
             createBrowserSender.sendBeacon({
                 url: getUvUrl(),
-                data: buildBasicData()
-            })
-        })
+                data: buildBasicData(),
+            });
+        });
 
         return;
     }

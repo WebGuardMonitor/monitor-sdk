@@ -1,10 +1,12 @@
-import {WINDOW} from "../types";
+import { WINDOW } from '../types';
 
 export const createReporter = (callback: Function) => {
-
-    WINDOW.requestIdleCallback(() => {
-        callback()
-    }, {
-        timeout: 150
-    })
-}
+    WINDOW.requestIdleCallback(
+        () => {
+            callback();
+        },
+        {
+            timeout: 150,
+        },
+    );
+};

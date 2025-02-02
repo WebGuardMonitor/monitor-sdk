@@ -18,11 +18,12 @@ import {
     VITALS_INP,
     VITALS_LCP,
     VITALS_LOAD,
-    VITALS_TTFB
-} from "../common";
+    VITALS_TTFB,
+} from '../common';
 
 export type EventType =
-    | 'pv' | 'uv'
+    | 'pv'
+    | 'uv'
     | typeof PERFORMANCE_TIMING_EV_TYPE
     | typeof CLICK_EV_TYPE
     | typeof BATCH_TYPE
@@ -42,4 +43,4 @@ export type EventType =
     | typeof VITALS_LOAD
     | typeof VITALS_DCL
     | typeof NAVIGATION_TIMING_TYPE
-    | typeof STAY_TIME_TYPE
+    | typeof STAY_TIME_TYPE;

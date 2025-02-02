@@ -1,4 +1,4 @@
-import {isObject} from "./is";
+import { isObject } from './is';
 
 type Params = Record<string, any>;
 

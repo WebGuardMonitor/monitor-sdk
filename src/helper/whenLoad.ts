@@ -1,4 +1,4 @@
-import {COMPLETE} from "../common";
+import { COMPLETE } from '../common';
 
 /**
  * 监听页面所有内容都已被完全加载。
@@ -9,7 +9,7 @@ import {COMPLETE} from "../common";
 export const whenLoad = (callback: () => void) => {
     document.addEventListener('readystatechange', () => {
         if (document.readyState === COMPLETE) {
-            callback()
+            callback();
         }
-    })
-}
+    });
+};

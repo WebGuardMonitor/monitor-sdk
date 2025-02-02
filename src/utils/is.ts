@@ -1,4 +1,4 @@
-import {WINDOW} from "../types";
+import { WINDOW } from '../types';
 
 /**
  * 判断是否为对象
@@ -9,13 +9,13 @@ export const isObject = (obj: any): obj is Record<string, any> => {
 };
 
 export const isPerformanceSupported = (): boolean => {
-    return !!WINDOW.performance && !!WINDOW.performance.getEntriesByType && !!WINDOW.performance.mark
-}
+    return !!WINDOW.performance && !!WINDOW.performance.getEntriesByType && !!WINDOW.performance.mark;
+};
 
 export const isPerformanceObserverSupported = (): boolean => {
-    return !!WINDOW.PerformanceObserver
-}
+    return !!WINDOW.PerformanceObserver;
+};
 
 export const isNavigatorSupported = (): boolean => {
-    return !!WINDOW.navigator
-}
+    return !!WINDOW.navigator;
+};

@@ -1,2 +1,2 @@
-export * from './promise.error'
-export * from './js.error'
+export * from './promise.error';
+export * from './js.error';

@@ -1,10 +1,10 @@
-import {whenLoad} from "../../helper/whenLoad";
-import {getNavigationEntry} from "../../helper/getNavigationEntry";
-import {getDefaultPerformance} from "../../utils";
-import {MonitorImplements} from "../../types";
-import {bindReporter} from "../../helper/bindReporter";
-import {constructReportData} from "../../helper/BasicData";
-import {NAVIGATION_TIMING_TYPE} from "../../common";
+import { whenLoad } from '../../helper/whenLoad';
+import { getNavigationEntry } from '../../helper/getNavigationEntry';
+import { getDefaultPerformance } from '../../utils';
+import { MonitorImplements } from '../../types';
+import { bindReporter } from '../../helper/bindReporter';
+import { constructReportData } from '../../helper/BasicData';
+import { NAVIGATION_TIMING_TYPE } from '../../common';
 
 /**
  * 获取站点所用的时间线
@@ -14,7 +14,6 @@ export class NavigationTimingMonitor implements MonitorImplements {
         whenLoad(() => {
             setTimeout(() => {
                 Promise.resolve().then(() => {
-
                     let data;
 
                     if (!!performance.getEntriesByType('navigation')[0]) {
@@ -23,10 +22,10 @@ export class NavigationTimingMonitor implements MonitorImplements {
                         data = this.NavigationTimingV1();
                     }
 
-                    bindReporter(constructReportData(NAVIGATION_TIMING_TYPE, data))
-                })
-            }, 0)
-        })
+                    bindReporter(constructReportData(NAVIGATION_TIMING_TYPE, data));
+                });
+            }, 0);
+        });
     }
 
     /**
@@ -44,7 +43,7 @@ export class NavigationTimingMonitor implements MonitorImplements {
             responseEnd,
             domInteractive,
             domContentLoadedEventEnd,
-            loadEventStart
+            loadEventStart,
         } = getNavigationEntry();
 
         return {
@@ -55,7 +54,7 @@ export class NavigationTimingMonitor implements MonitorImplements {
             transmission: responseEnd - responseStart,
             dom: domInteractive - responseEnd,
             resource: loadEventStart - domContentLoadedEventEnd,
-        }
+        };
     }
 
     /**
@@ -73,7 +72,7 @@ export class NavigationTimingMonitor implements MonitorImplements {
             responseEnd,
             domInteractive,
             domContentLoadedEventEnd,
-            loadEventStart
+            loadEventStart,
         } = getDefaultPerformance()?.timing as PerformanceTiming;
         return {
             dns: domainLookupEnd - domainLookupStart,
@@ -83,6 +82,6 @@ export class NavigationTimingMonitor implements MonitorImplements {
             transmission: responseEnd - responseStart,
             dom: domInteractive - responseEnd,
             resource: loadEventStart - domContentLoadedEventEnd,
-        }
+        };
     }
 }

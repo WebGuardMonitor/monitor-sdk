@@ -1,22 +1,19 @@
-import {MonitorImplements, WINDOW} from "../../types";
-import {whenVisible} from "../../helper/whenVisible";
-import {onHidden} from "../../helper/onHidden";
-import {whenReady} from "../../helper/whenReady";
-import {constructReportData} from "../../helper/BasicData";
-import {STAY_TIME_TYPE} from "../../common";
+import { MonitorImplements, WINDOW } from '../../types';
+import { whenVisible } from '../../helper/whenVisible';
+import { onHidden } from '../../helper/onHidden';
+import { whenReady } from '../../helper/whenReady';
+import { constructReportData } from '../../helper/BasicData';
+import { STAY_TIME_TYPE } from '../../common';
 
 export class StayTime implements MonitorImplements {
     private timer: number = 0;
 
-
     initialize() {
-
         whenReady(() => {
-            this.setTime()
-        })
+            this.setTime();
+        });
 
         onHidden(() => {
-
             const endTime = Date.now();
 
             const millis = endTime - this.timer;
@@ -25,19 +22,15 @@ export class StayTime implements MonitorImplements {
                 startTime: this.timer,
                 endTime,
                 duration: Math.floor(millis / 1e3),
-                href: WINDOW.location.href
-            }
+                href: WINDOW.location.href,
+            };
 
-            WINDOW.Sender.push(constructReportData(STAY_TIME_TYPE, data))
-
-        }, false)
-
+            WINDOW.Sender.push(constructReportData(STAY_TIME_TYPE, data));
+        }, false);
 
         whenVisible(() => {
-            this.setTime()
+            this.setTime();
         });
-
-
     }
 
     setTime() {

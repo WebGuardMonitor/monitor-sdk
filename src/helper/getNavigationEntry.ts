@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {WINDOW} from "../types";
+import { WINDOW } from '../types';
 
 export const getNavigationEntry = (): PerformanceNavigationTiming => {
     const perf = WINDOW.performance;
@@ -26,11 +26,7 @@ export const getNavigationEntry = (): PerformanceNavigationTiming => {
     const navigationEntries = perf.getEntriesByType('navigation') as PerformanceNavigationTiming[];
     const navigationEntry = navigationEntries[0];
 
-    if (
-        navigationEntry &&
-        navigationEntry.responseStart > 0 &&
-        navigationEntry.responseStart < perf.now()
-    ) {
+    if (navigationEntry && navigationEntry.responseStart > 0 && navigationEntry.responseStart < perf.now()) {
         return navigationEntry;
     }
 

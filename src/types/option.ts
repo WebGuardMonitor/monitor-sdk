@@ -8,29 +8,29 @@ export interface Options {
     // 会话 ID
     sessionId?: string;
     // 是否开启 PV 上报
-    isPageView: boolean,
+    isPageView: boolean;
     // 是否开启 UV 上报
-    isUniqueVisitor: boolean,
+    isUniqueVisitor: boolean;
     // 是否启动 performance 指标上报
-    isPerformance: boolean,
+    isPerformance: boolean;
     // 是否开启网站性能指标数据上报
-    isWebVitals: boolean,
+    isWebVitals: boolean;
     // 是否开启 Promise 错误上报
-    isPromiseError: boolean,
+    isPromiseError: boolean;
     // 是否开启点击事件上报
-    isClickEvent: boolean,
+    isClickEvent: boolean;
     // 是否开启屏幕录制
-    isRecord: boolean,
+    isRecord: boolean;
     // 是否上报数据资源
-    isResource: boolean,
+    isResource: boolean;
     // 是否 XHR
-    isXhr: boolean,
+    isXhr: boolean;
     // 是否 fetch
-    isFetch: boolean,
+    isFetch: boolean;
     // 是否 js error
-    isJsError: boolean,
+    isJsError: boolean;
     // 是否耗时数据
-    isNavigationTiming: boolean
+    isNavigationTiming: boolean;
 }
 
 export interface DefaultOption {
@@ -38,8 +38,7 @@ export interface DefaultOption {
     REPORT_UV: string;
 }
 
-export interface ConfigOptionType extends Options, DefaultOption {
-}
+export interface ConfigOptionType extends Options, DefaultOption {}
 
 export interface MethodOptions {
     url: string;

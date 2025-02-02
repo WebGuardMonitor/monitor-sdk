@@ -7,7 +7,7 @@ export enum EventType {
     PERFORMANCE = 'performance',
 }
 
-export const PERFORMANCE_TIMING_EV_TYPE = 'performance_timing'
+export const PERFORMANCE_TIMING_EV_TYPE = 'performance_timing';
 
 export const VITALS_FP = 'fp';
 export const VITALS_FCP = 'fcp';
@@ -26,13 +26,13 @@ export const VITALS_FPS = 'fps';
 
 export const COMPLETE = 'complete';
 
-export const CLICK_EV_TYPE = 'click_event'
-export const BATCH_TYPE = 'batch'
-export const PROMISE_TYPE = 'promise_error'
-export const RESOURCE_TYPE = 'resource'
-export const JS_ERROR_TYPE = 'js_error'
-export const RESOURCE_ERROR_TYPE = 'resource_error'
-export const HTTP_TYPE = 'http'
-export const FETCH_ERROR_TYPE = 'fetch_error'
-export const NAVIGATION_TIMING_TYPE = 'navigation_timing'
-export const STAY_TIME_TYPE = 'stay_time'
+export const CLICK_EV_TYPE = 'click_event';
+export const BATCH_TYPE = 'batch';
+export const PROMISE_TYPE = 'promise_error';
+export const RESOURCE_TYPE = 'resource';
+export const JS_ERROR_TYPE = 'js_error';
+export const RESOURCE_ERROR_TYPE = 'resource_error';
+export const HTTP_TYPE = 'http';
+export const FETCH_ERROR_TYPE = 'fetch_error';
+export const NAVIGATION_TIMING_TYPE = 'navigation_timing';
+export const STAY_TIME_TYPE = 'stay_time';

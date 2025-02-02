@@ -1,4 +1,4 @@
-import {isPerformanceObserverSupported, isPerformanceSupported} from "../utils";
+import { isPerformanceObserverSupported, isPerformanceSupported } from '../utils';
 
 /**
  * performance 性能指标兼容性处理执行
@@ -8,10 +8,10 @@ import {isPerformanceObserverSupported, isPerformanceSupported} from "../utils";
  */
 const runPerformanceObserver = (newCallback: () => void, oldCallback: () => void) => {
     if (isPerformanceObserverSupported()) {
-        newCallback()
+        newCallback();
     } else {
         if (isPerformanceSupported()) {
-            oldCallback()
+            oldCallback();
         }
     }
-}
+};

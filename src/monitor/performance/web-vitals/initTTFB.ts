@@ -1,7 +1,7 @@
-import {onTTFB} from "web-vitals";
-import {VITALS_TTFB} from "../../../common";
-import {WINDOW} from "../../../types";
-import {constructReportData} from "../../../helper/BasicData";
+import { onTTFB } from 'web-vitals';
+import { VITALS_TTFB } from '../../../common';
+import { WINDOW } from '../../../types';
+import { constructReportData } from '../../../helper/BasicData';
 
 export const initTTFB = () => {
     // whenReady(() => {
@@ -16,11 +16,13 @@ export const initTTFB = () => {
     //     bindReporter(data)
     // })
     onTTFB((metric) => {
-        WINDOW.Sender.push(constructReportData(VITALS_TTFB, {
-            name: VITALS_TTFB,
-            metric: metric.value,
-            entry: metric.entries,
-            vitals: metric
-        }))
-    })
-}
+        WINDOW.Sender.push(
+            constructReportData(VITALS_TTFB, {
+                name: VITALS_TTFB,
+                metric: metric.value,
+                entry: metric.entries,
+                vitals: metric,
+            }),
+        );
+    });
+};

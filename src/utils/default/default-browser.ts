@@ -1,4 +1,4 @@
-import {isObject} from "../is";
+import { isObject } from '../is';
 
 /**
  * Checks if the environment is a browser and returns the window object if true.
@@ -12,4 +12,4 @@ export const getDefaultBrowser = (): Window | undefined => {
     }
 
     return undefined;
-}
+};

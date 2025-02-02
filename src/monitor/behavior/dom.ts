@@ -1,12 +1,11 @@
-import {MonitorImplements, WINDOW} from "../../types";
-import {uuid} from "../../utils";
-import {CLICK_EV_TYPE} from "../../common";
-import {constructReportData} from "../../helper/BasicData";
+import { MonitorImplements, WINDOW } from '../../types';
+import { uuid } from '../../utils';
+import { CLICK_EV_TYPE } from '../../common';
+import { constructReportData } from '../../helper/BasicData';
 
 type ClickType = MouseEvent;
 
 export class DomMonitor implements MonitorImplements {
-
     // 防抖延迟时间（毫秒）
     private readonly DEBOUNCE_DELAY = 300;
 
@@ -15,19 +14,23 @@ export class DomMonitor implements MonitorImplements {
         // eventTypes.forEach(addListener);
 
         if (typeof window.addEventListener === 'function') {
-
-            WINDOW.addEventListener('click', (event: ClickType) => {
-                this.handleClick(event)
-            }, false)
+            WINDOW.addEventListener(
+                'click',
+                (event: ClickType) => {
+                    this.handleClick(event);
+                },
+                false,
+            );
 
             // TODO 监听 keypress
-
         } else if (typeof (window as any).attachEvent === 'function') {
-
-            (document as any).attachEvent('onclick', (event: ClickType) => {
-                this.handleClick(event)
-            }, false)
-
+            (document as any).attachEvent(
+                'onclick',
+                (event: ClickType) => {
+                    this.handleClick(event);
+                },
+                false,
+            );
         }
         // const addListener = () => {
         //     WINDOW.addEventListener('beforeunload', (event: ClickType) => {
@@ -43,7 +46,6 @@ export class DomMonitor implements MonitorImplements {
         //
         // }
     }
-
 
     /**
      * 获取点击事件的数据
@@ -65,9 +67,8 @@ export class DomMonitor implements MonitorImplements {
             screenX: event?.screenX,
             screenY: event?.screenY,
             // win: JSON.stringify(WINDOW)
-        }
+        };
 
-        WINDOW.Sender.push(constructReportData(CLICK_EV_TYPE, clickEvent))
-
+        WINDOW.Sender.push(constructReportData(CLICK_EV_TYPE, clickEvent));
     }
 }

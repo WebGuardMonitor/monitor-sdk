@@ -1,5 +1,5 @@
-import {ConfigOptionType, Options} from '../types';
-import {generateSessionId, generateUserId} from '../utils';
+import { ConfigOptionType, Options } from '../types';
+import { generateSessionId, generateUserId } from '../utils';
 
 export class ConfigManager {
     private static instance: ConfigManager;
@@ -38,14 +38,14 @@ export class ConfigManager {
             // 是否 js error
             isJsError: false,
             // 是否耗时数据
-            isNavigationTiming: false
+            isNavigationTiming: false,
         };
 
         if (!options.report || !options.appId) {
             throw new Error('Configuration is required for the first initialization.');
         }
 
-        this.options = {...defaultOption, ...options};
+        this.options = { ...defaultOption, ...options };
         this.options.REPORT_PV = `${this.options.report}/pv`;
         this.options.REPORT_UV = `${this.options.report}/uv`;
     }

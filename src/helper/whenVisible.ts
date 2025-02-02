@@ -5,7 +5,7 @@
 export const whenVisible = (callback: (e: Event) => void) => {
     document.addEventListener('visibilitychange', (event: Event) => {
         if (document.visibilityState === 'visible') {
-            callback(event)
+            callback(event);
         }
-    })
-}
+    });
+};

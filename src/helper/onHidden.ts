@@ -12,8 +12,8 @@ export const onHidden = (cb: (e: Event) => void, once: boolean) => {
                 removeEventListener('pagehide', onHiddenOrPageHide, true);
             }
         }
-    }
+    };
 
     addEventListener('visibilitychange', onHiddenOrPageHide, true);
     addEventListener('pagehide', onHiddenOrPageHide, true);
-}
+};
