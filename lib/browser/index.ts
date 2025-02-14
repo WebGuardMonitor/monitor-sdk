@@ -22,20 +22,20 @@ const createBrowserClient = (config: BaseOptionsFieldsTypes) => {
     const plugins = [
         // 行为数据
         {name: 'page.history', plugin: PageViewMonitorPlugins},// 页面跳转行为记录
-        // {name: 'dom', plugin: DocumentMonitorPlugin},// 点击事件记录
-        // {name: 'stay_time', plugin: StayTimeMonitorPlugin},// 页面停留时长记录
-        // {name: 'console', plugin: ConsoleMonitorPlugin},// console 打印
-        //
-        // // 异常数据
-        // {name: 'js_error', plugin: JsErrorMonitorPlugin}, // JS 错误监控，含资源加载错误
-        // {name: 'promise', plugin: PromiseMonitorPlugin}, // Promise 错误监控
-        // {name: 'http_xhr', plugin: XhrMonitorPlugin}, // Xhr 监听
-        // {name: 'http_fetch', plugin: FetchMonitorPlugin}, // Fetch 监听
-        // {name: 'resource', plugin: ResourceTimingMonitorPlugin}, // 资源加载监控
-        // // {name: 'websocket', plugin: ''},
-        //
-        // // 性能数据
-        // {name: 'performance', plugin: PerformanceTimingMonitorPlugin}, // 浏览器性能数据指标监控
+        {name: 'dom', plugin: DocumentMonitorPlugin},// 点击事件记录
+        {name: 'stay_time', plugin: StayTimeMonitorPlugin},// 页面停留时长记录
+        {name: 'console', plugin: ConsoleMonitorPlugin},// console 打印
+
+        // 异常数据
+        {name: 'js_error', plugin: JsErrorMonitorPlugin}, // JS 错误监控，含资源加载错误
+        {name: 'promise', plugin: PromiseMonitorPlugin}, // Promise 错误监控
+        {name: 'http_xhr', plugin: XhrMonitorPlugin}, // Xhr 监听
+        {name: 'http_fetch', plugin: FetchMonitorPlugin}, // Fetch 监听
+        {name: 'resource', plugin: ResourceTimingMonitorPlugin}, // 资源加载监控
+        // {name: 'websocket', plugin: ''},
+
+        // 性能数据
+        {name: 'performance', plugin: PerformanceTimingMonitorPlugin}, // 浏览器性能数据指标监控
     ]
 
     createClient(config, plugins)
