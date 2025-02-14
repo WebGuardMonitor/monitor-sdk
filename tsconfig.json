@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "baseUrl": "./",
         // 严格模式
         "strict": true,
         // 编译成什么版本
@@ -33,7 +34,15 @@
         "strictBindCallApply": false,
         //        "target": "es2018",
         "noUncheckedIndexedAccess": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "paths": {
+            "@/*": [
+                "lib/*"
+            ]
+        }
     },
-    "include": ["src/**/*"]
+    "include": [
+        "lib/**/*",
+        "env.d.ts"
+    ]
 }

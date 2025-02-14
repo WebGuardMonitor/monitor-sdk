@@ -1,0 +1,19 @@
+/**
+ * 监听页面是否隐藏
+ * @param cb
+ * @param once
+ */
+export const onHidden = (cb: (e: Event) => void, once: boolean = false) => {
+    const onHiddenOrPageHide = (event: Event) => {
+        if (event.type === 'pagehide' || document.visibilityState === 'hidden') {
+            cb(event);
+            if (once) {
+                removeEventListener('visibilitychange', onHiddenOrPageHide, true);
+                removeEventListener('pagehide', onHiddenOrPageHide, true);
+            }
+        }
+    };
+
+    addEventListener('visibilitychange', onHiddenOrPageHide, true);
+    addEventListener('pagehide', onHiddenOrPageHide, true);
+};
